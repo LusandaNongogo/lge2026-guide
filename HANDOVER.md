@@ -70,6 +70,10 @@ There is also a footer with the disclaimer ("Why I made this"), Report an error 
 5. **After results:** optionally turn the page into a promise tracker, applied equally to every party that wins seats.
 6. **Languages:** English only for now.
 
+## Usage counts
+
+The page sends anonymous "this happened" hits to a free public counter (abacus.jasoncameron.dev, namespace `lusandanongogo-lge2026`), only on the live github.io site. Keys: `visits` and `voting-day-views` (once per browser session), `quizzes-finished`, `assistant-questions` and `shares` (each time). No answers, quiz results, typed questions, cookies or identifiers are sent. View the totals at `stats.html`. The counts are public to anyone who knows the namespace, and the free service may be unreliable.
+
 ## Known limits
 
 - Copy protection is only a deterrent (text selection and copying are blocked; right-click is allowed). Screenshots and viewing the page source still work.

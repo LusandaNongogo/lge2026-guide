@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Guide Usage Counts</title>
+<style>
+:root { --bg:#f5f6f8; --card:#fff; --ink:#12151a; --muted:#555d68; --rule:#d8dce2; color-scheme: light; }
+@media (prefers-color-scheme: dark) { :root { --bg:#0e1013; --card:#171a1f; --ink:#eceef1; --muted:#a1a8b2; --rule:#2b3038; color-scheme: dark; } }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.5 Arial, sans-serif; padding: 0 16px 40px; }
+.stripe { display: grid; grid-template-columns: repeat(5, 1fr); height: 6px; margin: 0 -16px 24px; }
+.stripe i:nth-child(1){background:#007749}.stripe i:nth-child(2){background:#ffb81c}.stripe i:nth-child(3){background:#000}.stripe i:nth-child(4){background:#e03c31}.stripe i:nth-child(5){background:#001489}
+.wrap { max-width: 640px; margin: 0 auto; }
+h1 { font-size: 28px; text-transform: uppercase; margin: 0 0 6px; }
+p { color: var(--muted); margin: 0 0 18px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; }
+.tile { background: var(--card); border: 1px solid var(--rule); border-radius: 10px; padding: 14px 16px; }
+.tile b { display: block; font-size: 34px; font-variant-numeric: tabular-nums; }
+.tile span { font-size: 13px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+button { margin-top: 18px; font: inherit; padding: 9px 16px; border-radius: 8px; border: 1px solid var(--rule); background: var(--card); color: var(--ink); cursor: pointer; }
+small { display: block; margin-top: 18px; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="stripe"><i></i><i></i><i></i><i></i><i></i></div>
+<div class="wrap">
+  <h1>Guide Usage Counts</h1>
+  <p>Anonymous totals for the LGE 2026 Manifesto Guide since counting began. No answers, results, questions or personal details are recorded.</p>
+  <div class="grid" id="grid"></div>
+  <button type="button" id="refresh">Refresh</button>
+  <small id="when"></small>
+  <small>Visits and voting-day views count once per browser session. Quizzes, questions and shares count each time. Tests by the site owner are included.</small>
+</div>
+<script>
+"use strict";
+const BASE = "https://abacus.jasoncameron.dev/get/lusandanongogo-lge2026/";
+const KEYS = [["visits","Visits"],["quizzes-finished","Quizzes finished"],["assistant-questions","Assistant questions"],["voting-day-views","Voting-day tab views"],["shares","Share clicks"]];
+async function load() {
+  const grid = document.getElementById("grid");
+  grid.innerHTML = KEYS.map(([k, l]) => `<div class="tile"><b id="v-${k}">…</b><span>${l}</span></div>`).join("");
+  await Promise.all(KEYS.map(async ([k]) => {
+    let v = "0";
+    try { const r = await fetch(BASE + k, { credentials: "omit" }); if (r.ok) { const j = await r.json(); v = Number(j.value || 0).toLocaleString("en-ZA"); } else if (r.status !== 404) v = "?"; } catch (e) { v = "?"; }
+    document.getElementById("v-" + k).textContent = v;
+  }));
+  document.getElementById("when").textContent = "Updated " + new Date().toLocaleString("en-ZA");
+}
+document.getElementById("refresh").addEventListener("click", load);
+load();
+</script>
+</body>
+</html>

@@ -381,7 +381,7 @@ footer li { overflow-wrap: anywhere; }
 
   <!-- ASSISTANT -->
   <section id="view-ask" role="tabpanel" aria-labelledby="tab-ask" hidden>
-    <div class="scope"><strong>What this assistant covers.</strong> It answers only from the research behind this page, gathered up to 3 November 2026: the parties' 2026 local-election manifestos, where they are contesting, metro mayoral candidates and voting-day basics. It can't search the internet, it doesn't give opinions, and it won't tell you who to vote for. For anything else, ask the IEC (0800 11 8000, WhatsApp 0600 88 0000) or the parties directly.</div>
+    <div class="scope"><strong>What this assistant covers.</strong> It answers only from the research behind this page, gathered up to 3 November 2026: the parties' 2026 local-election manifestos, where they are contesting, metro mayoral candidates and voting-day basics. It can't search the internet, it doesn't give opinions, it doesn't store your questions, and it won't tell you who to vote for. For anything else, ask the IEC (0800 11 8000, WhatsApp 0600 88 0000) or the parties directly.</div>
     <div class="log" id="log" role="log" aria-live="polite" aria-label="Conversation"></div>
     <form class="ask" id="ask-form" autocomplete="off">
       <input id="ask-input" type="text" maxlength="300" placeholder="Ask about a party, an issue or your province" aria-label="Your question">
@@ -399,6 +399,7 @@ footer li { overflow-wrap: anywhere; }
         <li><strong>Not voting advice.</strong> The quiz shows which manifestos say the most about the issues you pick. It does not show which party will deliver, and it is not a recommendation.</li>
         <li><strong>Check the originals.</strong> Information comes from party manifestos and news reports gathered up to 3 November 2026. It may be incomplete or contain errors, and parties can change their plans. Read the manifestos and use official IEC information.</li>
         <li><strong>Equal treatment.</strong> Every party appears in the same format and in alphabetical order, except quiz results, which are ordered by your own answers (ties alphabetical). No party logos or party colours are used; the colours come from the national flag.</li>
+        <li><strong>Anonymous counts only.</strong> The page counts how many times it is opened, quizzes are finished and questions are asked. It never records your answers, quiz results, the questions you type or anything that identifies you, and it uses no cookies.</li>
         <li>Please share the link instead of copying content, so people always see the current version.</li>
       </ul>
     </div>
@@ -436,6 +437,18 @@ footer li { overflow-wrap: anywhere; }
 "use strict";
 const SITE_URL = location.origin + location.pathname;
 const CHECKED = "3 Nov 2026";
+/* Anonymous usage counts: only "this happened" totals. No answers, results, questions, cookies or identifiers are sent. Counts only on the live site. */
+const COUNTER = "https://abacus.jasoncameron.dev/hit/lusandanongogo-lge2026/";
+function count(key) {
+  if (!/github\.io$/.test(location.hostname)) return;
+  try { fetch(COUNTER + key, { keepalive: true, mode: "cors", credentials: "omit", referrerPolicy: "no-referrer" }).catch(() => {}); } catch (e) {}
+}
+function countOnce(key) {
+  let seen = null; try { seen = sessionStorage.getItem("c-" + key); } catch (e) {}
+  if (seen) return;
+  try { sessionStorage.setItem("c-" + key, "1"); } catch (e) {}
+  count(key);
+}
 const PROV = [
   ["all","All provinces"],["ec","Eastern Cape"],["fs","Free State"],["gp","Gauteng"],["kzn","KwaZulu-Natal"],
   ["lp","Limpopo"],["mp","Mpumalanga"],["nw","North West"],["nc","Northern Cape"],["wc","Western Cape"]
@@ -720,6 +733,7 @@ function showView(v) {
     $("#tab-" + n).setAttribute("aria-selected", String(n === v));
   });
   if (v === "ask" && !$("#log").children.length) askIntro();
+  if (v === "vote") countOnce("voting-day-views");
 }
 document.querySelector(".tabs").addEventListener("click", (e) => {
   const b = e.target.closest(".tab"); if (!b) return;
@@ -910,7 +924,7 @@ $("#quiz-stage").addEventListener("click", (e) => {
   if (act === "to1") quizGo(1);
   else if (act === "to2") { if (quiz.prov) quizGo(2); }
   else if (act === "to3") { if (!Object.values(quiz.w).some(v => v > 0)) { $("#err2").hidden = false; return; } quizGo(3); }
-  else if (act === "to4") quizGo(4);
+  else if (act === "to4") { quizGo(4); count("quizzes-finished"); }
   else if (act === "restart") { quiz.w = blankW(); quiz.a = {}; quizGo(1); }
 });
 $("#quiz-stage").addEventListener("change", (e) => {
@@ -1110,6 +1124,7 @@ function ask(q) {
   q = String(q).slice(0, 300);
   if (!q.trim()) return;
   addMsg("me", esc(q));
+  count("assistant-questions");
   addMsg("bot", answer(q) || introHtml());
 }
 $("#ask-form").addEventListener("submit", (e) => { e.preventDefault(); const i = $("#ask-input"); ask(i.value); i.value = ""; i.focus(); });
@@ -1129,7 +1144,8 @@ function copyFrom(el, okEl) {
   if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(el.value).then(done, fallback);
   else fallback();
 }
-$("#copy-share").addEventListener("click", () => copyFrom($("#share-text"), $("#share-ok")));
+$("#copy-share").addEventListener("click", () => { copyFrom($("#share-text"), $("#share-ok")); count("shares"); });
+$("#wa-link").addEventListener("click", () => count("shares"));
 $("#copy-email").addEventListener("click", () => copyFrom($("#err-email"), $("#email-ok")));
 
 /* ---------- after polls close (21:00 SAST = 19:00 UTC on 4 Nov 2026) ---------- */
@@ -1151,6 +1167,7 @@ try { window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change
 syncThemeBtn();
 
 /* ---------- start ---------- */
+countOnce("visits");
 $("#sources").innerHTML = SOURCES.map(([l, u]) => `<li>${ext(u, l)}</li>`).join("");
 renderGuide();
 renderQuiz();
