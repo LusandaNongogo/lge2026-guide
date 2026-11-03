@@ -65,7 +65,7 @@ There is also a footer with the disclaimer ("Why I made this"), Report an error 
 
 1. **Resolved 3 Nov:** the PA's Cape Town candidate is Cheslyn Daniels, formerly reported as Cheslyn Steenberg (EWN, 26 Oct 2026).
 2. **Resolved 3 Nov:** the ANC's 181 candidates in six municipalities were restored by the Constitutional Court (15 Oct) and confirmed by the IEC (19 Oct).
-3. **MK, Afrika Mayibuye and GOOD/RISE stay Partial.** Afrika Mayibuye's card now uses the party's own published launch speech (26 Sep 2026, Tembisa), which corrects earlier news wording ("abolish tenders" is really "end unnecessary tender dependence"; debt cancellation is for indigent and child-headed households). GOOD/RISE adds GOOD's Cape Town manifesto (19 Sep 2026, Athlone) and the Johannesburg candidate's plans. MK's full 2026 text (Polity) could not be opened.
+3. **Afrika Mayibuye and GOOD/RISE stay Partial.** Afrika Mayibuye's card now uses the party's own published launch speech (26 Sep 2026, Tembisa), which corrects earlier news wording ("abolish tenders" is really "end unnecessary tender dependence"; debt cancellation is for indigent and child-headed households). GOOD/RISE adds GOOD's Cape Town manifesto (19 Sep 2026, Athlone) and the Johannesburg candidate's plans. MK is now Full, from its 18-page People's Mandate 2026 (the Polity document).
 4. **IEC candidate search:** none found on the IEC's site as of 3 Nov; ballotbox.co.za stays, labelled independent.
 5. **After results:** optionally turn the page into a promise tracker, applied equally to every party that wins seats.
 6. **Languages:** English only for now.
