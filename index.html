@@ -1,0 +1,1154 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LGE 2026 Manifesto Guide</title>
+<meta name="description" content="Independent guide to South African parties' 2026 local-election manifestos, by province, with a priorities quiz and voting-day basics. Not linked to any party.">
+<meta property="og:title" content="LGE 2026 Manifesto Guide">
+<meta property="og:description" content="Independent guide to party manifestos for the 4 November 2026 local elections. Not linked to any party.">
+<meta property="og:type" content="website">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@600;700&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a ballot-paper column under a national-flag header; four views (guide, quiz, voting day, assistant) switched by tabs. Flag colours decorate; party colours are never used. */
+:root {
+  --bg: #f5f6f8;
+  --card: #ffffff;
+  --ink: #12151a;
+  --muted: #555d68;
+  --rule: #d8dce2;
+  --btn: #12151a;
+  --btn-fg: #ffffff;
+  --bar-bg: #e1e4e9;
+  --ok: #00663f;
+  --ok-soft: #e1f1e8;
+  --check: #7c5300;
+  --check-soft: #fbefd3;
+  --sa-green: #007749;
+  --sa-gold: #ffb81c;
+  --sa-red: #e03c31;
+  --sa-blue: #001489;
+  --sa-blue-ui: #001489;
+  --sa-black: #000000;
+  --f-display: "Archivo Narrow", "Arial Narrow", "Roboto Condensed", sans-serif;
+  --f-body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1013; --card: #171a1f; --ink: #eceef1; --muted: #a1a8b2; --rule: #2b3038;
+    --btn: #eceef1; --btn-fg: #0e1013; --bar-bg: #2b3038;
+    --ok: #5fd39a; --ok-soft: #102a1e; --check: #f2c75f; --check-soft: #33290f; --sa-blue-ui: #6f88ff;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1013; --card: #171a1f; --ink: #eceef1; --muted: #a1a8b2; --rule: #2b3038;
+  --btn: #eceef1; --btn-fg: #0e1013; --bar-bg: #2b3038;
+  --ok: #5fd39a; --ok-soft: #102a1e; --check: #f2c75f; --check-soft: #33290f; --sa-blue-ui: #6f88ff;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 15px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+.protect { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+.protect input, .protect textarea { -webkit-user-select: text; user-select: text; }
+.wrap { max-width: 860px; margin: 0 auto; padding-block: 0 56px; }
+h1, h2, h3 { text-transform: uppercase; letter-spacing: .01em; }
+a { color: inherit; text-decoration-color: var(--sa-green); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+a:hover { text-decoration-color: var(--sa-gold); }
+button, input, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--sa-gold); outline-offset: 2px; }
+
+/* Flag stripe + header */
+.stripe { display: grid; grid-template-columns: repeat(5, 1fr); height: 6px; margin-bottom: 22px; }
+.stripe i:nth-child(1) { background: var(--sa-green); }
+.stripe i:nth-child(2) { background: var(--sa-gold); }
+.stripe i:nth-child(3) { background: var(--sa-black); }
+.stripe i:nth-child(4) { background: var(--sa-red); }
+.stripe i:nth-child(5) { background: var(--sa-blue); }
+.closed { border: 2px solid var(--ink); background: var(--card); border-radius: 10px; padding: 12px 14px; margin-bottom: 18px; font-size: 14px; }
+.closed strong { text-transform: uppercase; letter-spacing: .03em; }
+.brand { display: flex; align-items: center; gap: 12px; }
+.flag { width: 54px; height: 36px; flex: none; border-radius: 3px; box-shadow: 0 0 0 1px var(--rule); display: block; }
+.eyebrow { font-family: var(--f-mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 14px; }
+.eyebrow b { color: var(--ink); font-weight: 500; }
+h1 { font-family: var(--f-display); font-weight: 700; font-size: clamp(34px, 6vw, 52px); line-height: 1.02; margin: 14px 0 12px; text-wrap: balance; }
+.lede { max-width: 64ch; color: var(--muted); margin: 0; }
+.lede strong { color: var(--ink); font-weight: 600; }
+.indep { margin: 12px 0 0; font-size: 13px; color: var(--muted); max-width: 70ch; }
+.indep b { color: var(--ink); font-weight: 600; }
+
+/* Tabs */
+.tabs { display: flex; flex-wrap: wrap; margin-top: 22px; border-bottom: 1px solid var(--rule); }
+.tab { text-transform: uppercase; letter-spacing: .03em; background: none; border: 0; border-bottom: 3px solid transparent; padding: 10px 14px 9px; font-weight: 600; cursor: pointer; color: var(--muted); }
+.tab:hover { color: var(--ink); }
+.tab[aria-selected="true"] { color: var(--ink); }
+.tab:nth-child(1)[aria-selected="true"] { border-bottom-color: var(--sa-green); }
+.tab:nth-child(2)[aria-selected="true"] { border-bottom-color: var(--sa-red); }
+.tab:nth-child(3)[aria-selected="true"] { border-bottom-color: var(--sa-gold); }
+.tab:nth-child(4)[aria-selected="true"] { border-bottom-color: var(--sa-blue-ui); }
+
+/* Shared controls */
+.controls { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); border-bottom: 1px solid var(--rule); padding-block: 12px; display: grid; gap: 10px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font: 500 13px/1 var(--f-body); background: var(--card); border: 1px solid var(--rule); border-radius: 999px; padding: 8px 12px; cursor: pointer; }
+.chip:hover { border-color: var(--ink); }
+.chip[aria-pressed="true"] { background: var(--btn); border-color: var(--btn); color: var(--btn-fg); }
+.search { display: flex; gap: 10px; align-items: center; }
+.search input { flex: 1; min-width: 0; background: var(--card); border: 1px solid var(--rule); border-radius: 8px; padding: 9px 12px; }
+.count { font-family: var(--f-mono); font-size: 12px; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.pnote { margin-top: 18px; padding: 14px 16px; border: 1px solid var(--rule); border-radius: 10px; background: var(--card); display: grid; gap: 6px; }
+.pnote h2 { font-family: var(--f-display); font-size: 22px; margin: 0; font-weight: 700; }
+.pnote ul { margin: 0; padding-left: 18px; color: var(--muted); }
+.pnote li strong { color: var(--ink); font-weight: 600; }
+.section-label { font-family: var(--f-mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 30px 0 4px; }
+
+/* Mayors */
+.mayors { display: grid; gap: 8px; margin-top: 8px; }
+.metro { border: 1px solid var(--rule); border-radius: 10px; background: var(--card); padding: 10px 14px; }
+.metro summary { font-family: var(--f-display); font-size: 18px; font-weight: 700; text-transform: uppercase; cursor: pointer; }
+.metro summary span { font-family: var(--f-mono); font-size: 11px; color: var(--muted); font-weight: 400; margin-left: 8px; letter-spacing: .05em; }
+.mtable { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 8px; min-width: 0; }
+.mtable td { padding: 6px 8px 6px 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+.mtable tr:last-child td { border-bottom: 0; }
+.mtable td:first-child { color: var(--muted); width: 48%; }
+.mtable .none { color: var(--muted); font-style: italic; }
+
+/* Party rows */
+.list { display: grid; }
+.party { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 18px; padding-block: 20px; border-bottom: 1px solid var(--rule); scroll-margin-top: 140px; }
+.party.flash { animation: flash 1.6s ease-out; }
+@keyframes flash { from { background: var(--check-soft); } to { background: transparent; } }
+.box { width: 76px; height: 76px; border: 2px solid var(--ink); border-radius: 4px; display: grid; place-items: center; text-align: center; font-family: var(--f-display); font-weight: 700; font-size: 17px; line-height: 1.05; padding: 4px; }
+.box.long { font-size: 13px; }
+.phead { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; }
+.phead h3 { font-family: var(--f-display); font-weight: 700; font-size: 24px; line-height: 1.1; margin: 0; text-wrap: balance; }
+.pill { font: 500 11px/1 var(--f-mono); letter-spacing: .05em; text-transform: uppercase; padding: 5px 8px; border-radius: 4px; white-space: nowrap; }
+.pill.yes { background: var(--ok-soft); color: var(--ok); }
+.pill.check { background: var(--check-soft); color: var(--check); }
+.pill.thin { border: 1px solid var(--check); color: var(--check); padding: 4px 7px; }
+.mtitle { margin: 6px 0 0; }
+.mtitle span { color: var(--muted); }
+.meta { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 2px 12px; margin: 10px 0 0; font-size: 13px; }
+.meta dt { font-family: var(--f-mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); padding-top: 2px; }
+.meta dd { margin: 0; }
+.promises { margin: 12px 0 0; padding-left: 18px; display: grid; gap: 5px; max-width: 68ch; }
+.promises li::marker { color: var(--sa-green); }
+.status { margin: 10px 0 0; font-size: 13px; color: var(--check); }
+.links { margin: 12px 0 0; display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; font-weight: 500; }
+.tablewrap { overflow-x: auto; margin-top: 8px; border: 1px solid var(--rule); border-radius: 10px; background: var(--card); }
+table.wide { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 460px; }
+table.wide th, table.wide td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+table.wide th { font-family: var(--f-mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+table.wide tr:last-child td { border-bottom: 0; }
+.empty { padding: 18px 0; color: var(--muted); }
+.hint { color: var(--muted); margin: 0 0 16px; max-width: 62ch; }
+
+/* Quiz */
+.rail { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; margin: 22px 0 18px; }
+.rail div { border-top: 4px solid var(--rule); padding-top: 6px; font-family: var(--f-mono); font-size: 11px; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
+.rail div.on, .rail div.done { color: var(--ink); }
+.rail div:nth-child(1).on, .rail div:nth-child(1).done { border-color: var(--sa-green); }
+.rail div:nth-child(2).on, .rail div:nth-child(2).done { border-color: var(--sa-gold); }
+.rail div:nth-child(3).on, .rail div:nth-child(3).done { border-color: var(--sa-red); }
+.rail div:nth-child(4).on, .rail div:nth-child(4).done { border-color: var(--sa-blue-ui); }
+h2.step { font-family: var(--f-display); font-weight: 700; font-size: 26px; line-height: 1.1; margin: 0 0 6px; text-wrap: balance; }
+.provs { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 8px; }
+.prov { text-align: left; background: var(--card); border: 1px solid var(--rule); border-radius: 8px; padding: 12px 14px; cursor: pointer; display: grid; gap: 2px; }
+.prov:hover { border-color: var(--ink); }
+.prov b { font-family: var(--f-display); font-size: 19px; font-weight: 700; }
+.prov span { font-family: var(--f-mono); font-size: 12px; color: var(--muted); }
+.prov[aria-pressed="true"] { border: 2px solid var(--ink); padding: 11px 13px; }
+.topics { display: grid; border-top: 1px solid var(--rule); }
+.topic { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 16px; align-items: center; padding-block: 12px; border-bottom: 1px solid var(--rule); }
+.topic h3 { margin: 0; font-size: 15px; font-weight: 600; }
+.topic p { margin: 2px 0 0; color: var(--muted); font-size: 13px; }
+.seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; background: var(--card); }
+.seg input { position: absolute; opacity: 0; pointer-events: none; }
+.seg label { padding: 7px 11px; font-size: 13px; cursor: pointer; border-left: 1px solid var(--rule); white-space: nowrap; }
+.seg label:first-of-type { border-left: 0; }
+.seg input:checked + label { background: var(--btn); color: var(--btn-fg); }
+.seg input:focus-visible + label { outline: 3px solid var(--sa-gold); outline-offset: -3px; }
+.tally { font-family: var(--f-mono); font-size: 12px; color: var(--muted); margin-top: 10px; font-variant-numeric: tabular-nums; }
+.qs { display: grid; gap: 22px; }
+fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: 8px; }
+legend { text-transform: uppercase; font-weight: 600; font-size: 16px; margin-bottom: 6px; padding: 0; }
+.opt { display: flex; gap: 10px; align-items: flex-start; background: var(--card); border: 1px solid var(--rule); border-radius: 8px; padding: 10px 12px; cursor: pointer; }
+.opt:has(input:checked) { border-color: var(--ink); box-shadow: inset 3px 0 0 var(--sa-gold); }
+.opt input { margin-top: 3px; accent-color: var(--ink); }
+.nav { display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; align-items: center; margin-top: 22px; }
+.btn { border: 1px solid var(--rule); background: var(--card); border-radius: 8px; padding: 10px 16px; cursor: pointer; font-weight: 500; text-decoration: none; display: inline-block; }
+.btn.primary { background: var(--btn); border-color: var(--btn); color: var(--btn-fg); }
+.btn.small { padding: 5px 10px; font-size: 13px; }
+.btn[disabled] { opacity: .45; cursor: not-allowed; }
+.err { color: var(--check); font-size: 13px; margin: 0; }
+.caveat { background: var(--check-soft); border-radius: 8px; padding: 12px 14px; font-size: 14px; margin: 0 0 18px; }
+.caveat strong { color: var(--check); }
+.best { border: 2px solid var(--ink); border-radius: 12px; background: var(--card); padding: 18px; margin-bottom: 8px; position: relative; overflow: hidden; }
+.best::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 5px; background: linear-gradient(90deg, var(--sa-green) 0 20%, var(--sa-gold) 20% 40%, var(--sa-black) 40% 60%, var(--sa-red) 60% 80%, var(--sa-blue) 80% 100%); }
+.best .label { font-family: var(--f-mono); font-size: 12px; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); margin: 4px 0 6px; }
+.best h3 { font-family: var(--f-display); font-size: 32px; font-weight: 700; line-height: 1.05; margin: 0; }
+.best .row { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; margin-top: 6px; }
+.best .acts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.pct { font-family: var(--f-mono); font-size: 14px; font-weight: 500; font-variant-numeric: tabular-nums; }
+.bar { height: 8px; background: var(--bar-bg); border-radius: 4px; margin: 8px 0 10px; overflow: hidden; max-width: 420px; }
+.bar i { display: block; height: 100%; background: var(--ink); border-radius: 4px; }
+.ev { margin: 8px 0 0; padding-left: 18px; display: grid; gap: 4px; font-size: 14px; }
+.ev b { font-weight: 600; }
+.ev li.miss { color: var(--muted); }
+.res { display: grid; }
+.r { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 14px; padding-block: 16px; border-bottom: 1px solid var(--rule); }
+.rank { font-family: var(--f-display); font-weight: 700; font-size: 26px; line-height: 1; color: var(--muted); padding-top: 2px; font-variant-numeric: tabular-nums; }
+.rh { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 10px; }
+.rh h3 { margin: 0; font-family: var(--f-display); font-size: 22px; font-weight: 700; line-height: 1.1; }
+details { margin-top: 4px; }
+summary { cursor: pointer; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .03em; }
+.summary { margin: 0 0 14px; font-size: 14px; color: var(--muted); }
+.summary b { color: var(--ink); font-weight: 600; }
+.how { margin-top: 26px; border: 1px solid var(--rule); border-radius: 10px; background: var(--card); padding: 12px 14px; }
+.how summary { font-family: var(--f-display); font-size: 17px; text-transform: uppercase; }
+.how p { margin: 8px 0 0; font-size: 14px; color: var(--muted); max-width: 70ch; }
+
+/* Voting day */
+.vote { display: grid; gap: 10px; margin-top: 22px; }
+.vote h2 { font-family: var(--f-display); font-size: 26px; margin: 0; }
+.vrow { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 12px; padding-block: 12px; border-bottom: 1px solid var(--rule); }
+.vrow dt { font-family: var(--f-mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); padding-top: 2px; }
+.vrow dd { margin: 0; }
+.vrow ol { margin: 0; padding-left: 18px; display: grid; gap: 4px; }
+
+/* Assistant */
+.scope { border-left: 4px solid var(--sa-blue-ui); background: var(--card); padding: 12px 14px; border-radius: 0 8px 8px 0; margin: 20px 0 14px; font-size: 14px; }
+.log { display: grid; gap: 10px; border: 1px solid var(--rule); border-radius: 12px; background: var(--card); padding: 14px; min-height: 260px; max-height: 62vh; overflow-y: auto; }
+.msg { max-width: 92%; padding: 10px 12px; border-radius: 10px; font-size: 14px; }
+.msg.bot { background: var(--bg); justify-self: start; }
+.msg.me { background: var(--btn); color: var(--btn-fg); justify-self: end; }
+.msg p { margin: 0 0 6px; }
+.msg p:last-child { margin-bottom: 0; }
+.msg ul { margin: 4px 0 6px; padding-left: 18px; display: grid; gap: 3px; }
+.msg .src { font-family: var(--f-mono); font-size: 11px; color: var(--muted); margin-top: 6px; }
+.ask { display: flex; gap: 8px; margin-top: 10px; }
+.ask input { flex: 1; min-width: 0; background: var(--card); border: 1px solid var(--rule); border-radius: 8px; padding: 10px 12px; }
+.sugs { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+
+/* Footer */
+footer { margin-top: 40px; font-size: 13px; color: var(--muted); display: grid; gap: 12px; border-top: 1px solid var(--rule); padding-top: 22px; }
+footer h2 { font-family: var(--f-display); font-size: 19px; color: var(--ink); margin: 6px 0 0; }
+footer ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; }
+footer li { overflow-wrap: anywhere; }
+.panel { background: var(--card); border: 1px solid var(--rule); border-radius: 10px; padding: 14px 16px; color: var(--ink); font-size: 14px; display: grid; gap: 8px; }
+.panel h2 { margin: 0; }
+.panel ul, .panel .sub { color: var(--muted); }
+.copyrow { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.copyrow input { flex: 1 1 240px; min-width: 0; background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; padding: 9px 12px; font-family: var(--f-mono); font-size: 14px; }
+.panel textarea { width: 100%; min-height: 110px; background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; padding: 10px 12px; font-size: 14px; resize: vertical; }
+.ok-note { font-family: var(--f-mono); font-size: 12px; color: var(--ok); }
+
+@media (max-width: 560px) {
+  .party { grid-template-columns: 56px minmax(0, 1fr); gap: 14px; }
+  .box { width: 56px; height: 56px; font-size: 14px; }
+  .box.long { font-size: 11px; }
+  .phead h3 { font-size: 21px; }
+  .topic { grid-template-columns: minmax(0, 1fr); }
+  .seg { justify-self: start; }
+  .rail div { font-size: 10px; }
+  .best h3 { font-size: 27px; }
+  .vrow { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+}
+.printrow { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; margin-top: 12px; }
+@media print {
+  :root { --bg: #fff; --card: #fff; --ink: #000; --muted: #333; --rule: #bbb; }
+  body { background: #fff; color: #000; font-size: 11pt; padding: 0; }
+  .tabs, .controls, .printrow, #view-quiz, #view-vote, #view-ask, .closed, footer .panel:nth-of-type(n+2), .links, .sugs { display: none !important; }
+  #view-guide { display: block !important; }
+  .party { break-inside: avoid; padding-block: 10px; }
+  .metro { break-inside: avoid; }
+  a { text-decoration: none; }
+  .stripe { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .party.flash { animation: none; }
+}
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; scroll-behavior: auto !important; } }
+</style>
+
+<div class="wrap protect" id="app">
+  <div class="stripe" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="closed" id="closed" hidden><strong>Voting has closed.</strong> Official results come from the IEC: <a href="https://results.elections.org.za/dashboards/lge" target="_blank" rel="noopener">results.elections.org.za ↗</a>. This guide stays online as a record of what parties promised, and a promise tracker will follow (see the Manifesto guide).</div>
+  <header>
+    <div class="brand">
+      <svg class="flag" viewBox="0 0 9 6" role="img" aria-label="Flag of South Africa">
+        <rect width="9" height="3" fill="#e03c31"/>
+        <rect y="3" width="9" height="3" fill="#001489"/>
+        <polygon points="1.8027,0 4.8027,2 9,2 9,4 4.8027,4 1.8027,6 0,6 0,0" fill="#ffffff"/>
+        <polygon points="0,0.7211 3.4183,3 0,5.2789" fill="#ffb81c"/>
+        <polygon points="1.0817,0 4.6816,2.4 9,2.4 9,3.6 4.6816,3.6 1.0817,6 0,6 0,5.2789 3.4183,3 0,0.7211 0,0" fill="#007749"/>
+        <polygon points="0,1.2018 2.6973,3 0,4.7982" fill="#000000"/>
+      </svg>
+      <div class="eyebrow"><span>Local Government Elections</span><span><b>Wed 4 Nov 2026</b></span><span>Polls 07:00–21:00</span><span>Checked 3 Nov 2026</span></div>
+    </div>
+    <h1>Party manifestos, by province</h1>
+    <p class="lede">Every party below has published a 2026 local-election manifesto, or the closest thing to one. Pick your province to see who is contesting there. <strong>546 parties are on ballots nationwide</strong>, so this covers the parties with manifestos found in a targeted search, not every name on your ballot. Parties are listed alphabetically; promises are summarised in plain words, so read the manifesto itself before you decide.</p>
+    <p class="indep"><b>Independent voter tool.</b> Not affiliated with any party, candidate or the IEC, and not a recommendation. See the disclaimer at the bottom of the page.</p>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Sections">
+    <button class="tab" role="tab" id="tab-guide" data-view="guide" aria-controls="view-guide">Manifesto guide</button>
+    <button class="tab" role="tab" id="tab-quiz" data-view="quiz" aria-controls="view-quiz">Priorities quiz</button>
+    <button class="tab" role="tab" id="tab-vote" data-view="vote" aria-controls="view-vote">Voting day</button>
+    <button class="tab" role="tab" id="tab-ask" data-view="ask" aria-controls="view-ask">Ask the guide</button>
+  </nav>
+
+  <!-- GUIDE -->
+  <section id="view-guide" role="tabpanel" aria-labelledby="tab-guide">
+    <div class="controls">
+      <div class="chips" id="chips" role="group" aria-label="Filter by province"></div>
+      <div class="search">
+        <input id="q" type="search" maxlength="80" placeholder="Search parties or promises (e.g. water, rates, jobs)" aria-label="Search parties or promises">
+        <span class="count" id="count"></span>
+      </div>
+    </div>
+    <section class="pnote" id="pnote" aria-live="polite"></section>
+    <div class="printrow"><button class="btn small" type="button" id="print-btn">Print or save as PDF</button><span class="count">Prints the province you have selected</span></div>
+    <section class="pnote" id="tracker" hidden>
+      <h2>Promise Tracker</h2>
+      <p class="sub">Tracking starts once the IEC declares the results. Every party that wins seats will be tracked with the same method: each promise listed in this guide is marked <strong>Not started</strong>, <strong>In progress</strong>, <strong>Done</strong> or <strong>Not kept</strong>, and every update links to a source such as a council report, an audit or a news report. No party is tracked more closely than another.</p>
+    </section>
+    <div id="mayors-wrap">
+      <p class="section-label">Metro mayoral candidates</p>
+      <p class="hint" style="margin:0">Councils elect mayors after the vote. Names come from news reports up to 30 October 2026 and may be incomplete; a party not listed may still be on the ballot.</p>
+      <div class="mayors" id="mayors"></div>
+    </div>
+    <p class="section-label">Parties with a 2026 manifesto</p>
+    <div class="list" id="list"></div>
+    <p class="section-label">Also contesting · no 2026 manifesto found in this search</p>
+    <p class="hint" style="margin:0 0 4px"><strong>How parties were chosen.</strong> A party gets a full card when a 2026 local-election manifesto, or a published platform, was found for it in a search of party websites, the IEC and South African news outlets up to 3 November 2026. Parties below are also contesting, but no manifesto was found, so their promises are not summarised. Leaving a party out is not a judgement about it. Parties can send their manifesto to the corrections email to be added.</p>
+    <div class="tablewrap">
+      <table class="wide">
+        <thead><tr><th>Party</th><th>Where</th><th>Note</th></tr></thead>
+        <tbody id="others"></tbody>
+      </table>
+    </div>
+    <p class="section-label">How to read this</p>
+    <p class="hint"><strong>Confirmed here</strong> means a source shows the party fielding candidates or a campaign in that province. <strong>Check your ballot</strong> means the party is registered nationally but this research could not confirm where its candidates stand.</p>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="view-quiz" role="tabpanel" aria-labelledby="tab-quiz" hidden>
+    <div class="rail" id="rail"><div>1 · Province</div><div>2 · Priorities</div><div>3 · Approach</div><div>4 · Result</div></div>
+    <div id="quiz-stage" aria-live="polite"></div>
+    <details class="how" id="how">
+      <summary>How matching works</summary>
+      <p>Each party's manifesto was scored on 13 local issues: 2 for a specific promise, 1 for a general mention, and 0 when nothing was found in this research. Issues you mark as Top priority count double. Each approach answer adds points only for parties whose manifesto states that approach. A party's percentage is its points divided by the most it could have scored on your answers.</p>
+      <p>Parties marked <strong>Partial</strong> had less published detail available, so their scores may understate their full plans. Equal scores are listed alphabetically. Only parties contesting in your province, or that could not be ruled out there, are compared.</p>
+    </details>
+  </section>
+
+  <!-- VOTING DAY -->
+  <section id="view-vote" role="tabpanel" aria-labelledby="tab-vote" hidden>
+    <div class="vote">
+      <h2>Voting day basics</h2>
+      <dl>
+        <div class="vrow"><dt>When</dt><dd>Wednesday 4 November 2026. Voting stations are open from 07:00 to 21:00.</dd></div>
+        <div class="vrow"><dt>Bring</dt><dd>One of these: a green barcoded ID book, a smart ID card, or a temporary ID certificate. These are the only documents the IEC lists.</dd></div>
+        <div class="vrow"><dt>Where</dt><dd>The voting station for the voting district where you are registered. To check it, SMS your ID number to <b>32810</b>, call <b>0800 11 8000</b>, WhatsApp <b>0600 88 0000</b>, or visit <a href="https://www.elections.org.za" target="_blank" rel="noopener">elections.org.za ↗</a>.</dd></div>
+        <div class="vrow"><dt>Ballots</dt><dd>In metros and local councils you get two ballot papers: one for a ward councillor and one for a party. In district council areas you get a third.</dd></div>
+        <div class="vrow"><dt>At the station</dt><dd><ol>
+          <li>Your ID is scanned at the door and you get a slip confirming you're registered.</li>
+          <li>Officials cross your name off the voters' roll and mark your left thumbnail with ink.</li>
+          <li>You receive your ballot papers. Check that each one has a stamp on the back.</li>
+          <li>In the booth, make one clear X per ballot, next to your choice. Fold the papers.</li>
+          <li>Put each ballot in the ballot box.</li>
+        </ol></dd></div>
+        <div class="vrow"><dt>Mistakes</dt><dd>If you spoil a ballot, ask an official for a new one. Photographing your marked ballot is not allowed.</dd></div>
+        <div class="vrow"><dt>Your ward</dt><dd>To see who is standing in your ward, enter your address at <a href="https://www.ballotbox.co.za" target="_blank" rel="noopener">ballotbox.co.za ↗</a>, an independent site (not the IEC). This research did not find a public candidate search on the IEC's own site.</dd></div>
+        <div class="vrow"><dt>Mayors</dt><dd>Metro mayoral candidates are listed in the Manifesto guide when you pick Gauteng, KwaZulu-Natal, Western Cape, Eastern Cape or Free State.</dd></div>
+      </dl>
+      <p class="hint">Source: <a href="https://www.elections.org.za/pw/Voter/How-To-Vote" target="_blank" rel="noopener">IEC: How to vote ↗</a></p>
+    </div>
+  </section>
+
+  <!-- ASSISTANT -->
+  <section id="view-ask" role="tabpanel" aria-labelledby="tab-ask" hidden>
+    <div class="scope"><strong>What this assistant covers.</strong> It answers only from the research behind this page, gathered up to 3 November 2026: the parties' 2026 local-election manifestos, where they are contesting, metro mayoral candidates and voting-day basics. It can't search the internet, it doesn't give opinions, and it won't tell you who to vote for. For anything else, ask the IEC (0800 11 8000, WhatsApp 0600 88 0000) or the parties directly.</div>
+    <div class="log" id="log" role="log" aria-live="polite" aria-label="Conversation"></div>
+    <form class="ask" id="ask-form" autocomplete="off">
+      <input id="ask-input" type="text" maxlength="300" placeholder="Ask about a party, an issue or your province" aria-label="Your question">
+      <button class="btn primary" type="submit">Ask</button>
+      <button class="btn" type="button" id="ask-clear">Clear</button>
+    </form>
+    <div class="sugs" id="sugs" aria-label="Example questions"></div>
+  </section>
+
+  <footer>
+    <div class="panel">
+      <h2>Why I made this</h2>
+      <p>I made this tool because I believed it would help people compare the parties and make the right decision for themselves. It is independent: it is not affiliated with, funded by or endorsing any political party, candidate or the Electoral Commission (IEC).</p>
+      <ul>
+        <li><strong>Not voting advice.</strong> The quiz shows which manifestos say the most about the issues you pick. It does not show which party will deliver, and it is not a recommendation.</li>
+        <li><strong>Check the originals.</strong> Information comes from party manifestos and news reports gathered up to 3 November 2026. It may be incomplete or contain errors, and parties can change their plans. Read the manifestos and use official IEC information.</li>
+        <li><strong>Equal treatment.</strong> Every party appears in the same format and in alphabetical order, except quiz results, which are ordered by your own answers (ties alphabetical). No party logos or party colours are used; the colours come from the national flag.</li>
+        <li>Please share the link instead of copying content, so people always see the current version.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h2>Report an error</h2>
+      <p>Spotted a mistake? Readers and parties can send corrections, with a source, to:</p>
+      <div class="copyrow">
+        <input id="err-email" type="text" readonly value="lge2026corrections@gmail.com" aria-label="Corrections email address">
+        <button class="btn" type="button" id="copy-email">Copy email</button>
+        <span class="ok-note" id="email-ok" hidden>Copied</span>
+      </div>
+      <p class="sub">Corrections are checked against the party's own manifesto or official records and fixed as soon as possible. Parties are welcome to send corrections to their own entries.</p>
+    </div>
+    <div class="panel">
+      <h2>Share this guide</h2>
+      <p class="sub">Ready-made message for WhatsApp or anywhere else:</p>
+      <textarea id="share-text" readonly aria-label="Message to share"></textarea>
+      <div class="copyrow">
+        <button class="btn primary" type="button" id="copy-share">Copy message</button>
+        <a class="btn" id="wa-link" href="#" target="_blank" rel="noopener">Open WhatsApp ↗</a>
+        <span class="ok-note" id="share-ok" hidden>Copied</span>
+      </div>
+    </div>
+    <h2>Where to ask other questions</h2>
+    <ul>
+      <li>Electoral Commission (IEC): <a href="https://www.elections.org.za" target="_blank" rel="noopener">elections.org.za</a>, helpline 0800 11 8000, WhatsApp 0600 88 0000, or SMS your ID number to 32810 to confirm your voting station.</li>
+      <li>The parties themselves: each party card links to its manifesto, and to its website where one was found.</li>
+      <li>Fact-checks of party claims: <a href="https://africacheck.org" target="_blank" rel="noopener">Africa Check</a> and established news outlets.</li>
+    </ul>
+    <h2>Sources</h2>
+    <ul id="sources"></ul>
+  </footer>
+</div>
+
+<script>
+"use strict";
+const SITE_URL = location.origin + location.pathname;
+const CHECKED = "3 Nov 2026";
+const PROV = [
+  ["all","All provinces"],["ec","Eastern Cape"],["fs","Free State"],["gp","Gauteng"],["kzn","KwaZulu-Natal"],
+  ["lp","Limpopo"],["mp","Mpumalanga"],["nw","North West"],["nc","Northern Cape"],["wc","Western Cape"]
+];
+const ALL = ["ec","fs","gp","kzn","lp","mp","nw","nc","wc"];
+const provName = Object.fromEntries(PROV);
+
+const TOPICS = [
+  ["water","Water and sewage","Taps that work, leaks fixed, no sewage spills"],
+  ["power","Electricity","Reliable supply, repairs, theft and tariffs"],
+  ["roads","Roads and transport","Potholes, traffic lights, taxi ranks, buses"],
+  ["crime","Crime and safety","Policing support, lighting, CCTV, by-laws"],
+  ["housing","Housing and land","Title deeds, informal settlements, land release"],
+  ["jobs","Jobs and small business","Red tape, traders, local procurement"],
+  ["bills","Rates and bills","Tariff increases, accurate billing, relief"],
+  ["poor","Free basic services","Free water, electricity and refuse for poor households"],
+  ["clean","Fighting corruption","Merit hiring, open tenders, recovering stolen money"],
+  ["account","Deadlines and accountability","100-day plans, report cards, councillors who report back"],
+  ["inhouse","Municipal skills and staff","Engineers, in-house teams, filling vacancies"],
+  ["community","Community voice","Ward committees, residents' say, traditional leaders"],
+  ["facilities","Refuse, parks and facilities","Bin collection, dumping, parks, libraries, halls"]
+];
+const topicName = Object.fromEntries(TOPICS.map(t => [t[0], t[1]]));
+
+const QUESTIONS = [
+  { id:"q1", text:"Who should fix and run municipal services?", opts:[
+    ["inhouse","Mostly the municipality's own permanent staff",["AMM","EFF","SACP","ASA","IFP"]],
+    ["private","Partnerships with private companies",["DA","FF+","ACDP"]] ]},
+  { id:"q2", text:"On electricity, what matters most to you?", opts:[
+    ["solar","Making rooftop solar and private generation easier",["FF+","PA","ACDP"]],
+    ["afford","Keeping electricity affordable for poor households",["SACP","ANC","EFF"]],
+    ["theft","Stopping theft and illegal connections",["AMM","ASA","FF+","UDM","ACDP"]] ]},
+  { id:"q3", text:"What kind of help with municipal bills do you want?", opts:[
+    ["relief","A rates break or write-off of old debt",["AMM","PA"]],
+    ["auto","Automatic free basic services for households on grants",["ANC","EFF"]],
+    ["cap","Increases capped at inflation and accurate bills",["FF+","ASA","BOSA"]] ]},
+  { id:"q4", text:"How should councils be held to account?", opts:[
+    ["deadlines","Public deadlines and report cards",["AMM","ANC","MK","PA","BOSA","ASA"]],
+    ["merit","Merit hiring and an end to political appointments",["AMM","DA","ACDP","FF+","BOSA","MK","ASA"]],
+    ["meet","Councillors meeting residents regularly",["AMM","UDM","ANC","ASA","BOSA"]] ]}
+];
+
+/* t: per-issue findings. 2 = specific commitment, 1 = general mention, 0 = nothing found. */
+const PARTIES = [
+  { abbr:"ACDP", name:"African Christian Democratic Party", title:"2026 LGE Manifesto",
+    launched:"15 Aug 2026", place:"Benoni, Gauteng",
+    footprint:"National party; where it fields candidates was not confirmed in this search.",
+    confirmed:[], others:"check", detail:"full", site:"https://acdp.org.za",
+    aliases:[/\bacdp\b/, /african christian/, /christian democratic/, /meshoe/, /thring/],
+    promises:["Clean, accountable governance in the councils it wins.","A fresh group of local leaders; mayoral candidates were named at the launch.","Stronger municipal law enforcement and better-resourced local courts.","Officials held personally liable for losses, and whistle-blowers protected.","More private and renewable electricity generation, including by capable municipalities.","Bigger police and metro police budgets, and closing drug dens and illegal shebeens.","Help restore Metrorail and expand bus rapid transit.","Audit municipal land, release serviced stands and fast-track title deeds."],
+    links:[["Manifesto (PDF)","https://acdp.org.za//2026ManifestoENGLISH-download.pdf"],["Summary manifesto (PDF)","https://acdp.org.za/MiniManifesto2026LGE.pdf"],["eNCA report","https://www.enca.com/news/acdp-promises-clean-governance-and-new-crop-leaders"],["Inside Politics report","https://insidepolitic.co.za/integrity-is-a-service-delivery-issue-says-thring-at-acdp-manifesto-launch/"]],
+    t:{ water:[2,"Engineers and plumbers hired, leaks and meters fixed, action on the water-tanker mafia"], power:[2,"Coal baseload with cleaner technology, more renewables, maintained networks"], roads:[2,"Restore Metrorail, expand bus rapid transit, fix potholes and traffic lights quickly"], crime:[2,"Bigger police and metro police budgets; close drug dens and illegal shebeens"], housing:[2,"Municipal land audit, serviced stands and faster title deeds"], jobs:[2,"Less red tape, paid internships, support for emerging farmers"], bills:[1,"Fairer, more accurate billing"], poor:[1,"Better free basic services for needy households and disabled people"], clean:[2,"Merit appointments; protection for whistle-blowers and forensic officials"], account:[2,"Accounting officers held personally liable; action on adverse audits"], inhouse:[2,"Competent engineers, technicians and plumbers; flatter management"], community:[1,"More community say on liquor licences; support for neighbourhood watches"], facilities:[2,"Maintained parks and libraries; waste-to-energy plants"] } },
+  { abbr:"ASA", name:"ActionSA", title:"2026 Local Government Manifesto",
+    launched:"26 Sep 2026", place:"Johannesburg City Hall",
+    footprint:"Reported to be contesting 78 municipalities, with mayoral candidates in Johannesburg, Tshwane, Ekurhuleni, eThekwini and Cape Town.",
+    confirmed:["gp","kzn","wc"], others:"check", detail:"full", site:"https://www.actionsa.org.za",
+    aliases:[/action ?sa\b/, /mashaba/],
+    promises:["Crime and law enforcement first: infrastructure theft, illegal connections and hijacked buildings.","Officials sign performance agreements that are enforced, as in a private company.","Ease the cost of living in Cape Town if it governs there.","More funding for local government.","Rates and tariff increases capped at inflation unless clearly justified.","Lifestyle audits for office bearers and published tender information.","Upgrade informal settlements and clear title-deed backlogs."],
+    links:[["Manifesto (PDF)","https://www.actionsa.org.za/wp-content/uploads/2026/09/ActionSA-LGE-Manifesto-2026-Final-.pdf"],["Manifesto (Polity download)","https://www.polity.org.za/article/actionsa-2026-local-government-manifesto-2026-10-13"]],
+    t:{ water:[2,"Replace ageing pipes, cut leaks and illegal connections, municipal emergency tankers"], power:[2,"Replace substations and cables; act on theft and meter tampering"], roads:[2,"Pothole repair standards; more reliable public transport"], crime:[2,"Units for infrastructure theft and drugs; action on hijacked buildings"], housing:[2,"Upgrade informal settlements and clear title-deed backlogs"], jobs:[2,"Published turnaround times for approvals; easier procurement for small firms"], bills:[2,"Rates and tariff increases capped at inflation; faster billing disputes"], poor:[1,"Proactive registration of indigent households; rebates for pensioners"], clean:[2,"Lifestyle audits, published tenders, end cadre deployment"], account:[2,"Enforced performance agreements; monthly service reports"], inhouse:[1,"Insource where practical and affordable; fill critical vacancies"], community:[1,"Easy fault reporting; councillors visible in wards"], facilities:[2,"Scheduled refuse collection, action on dumping, maintained parks"] } },
+  { abbr:"ANC", name:"African National Congress", title:"Masakhe: Let Us Build",
+    launched:"23 Aug 2026", place:"Riverside Park, Diepsloot, Gauteng",
+    footprint:"Contesting nationally. 181 candidates in six municipalities (including Mangaung) were restored to the ballot by the Constitutional Court on 15 Oct 2026, after a missed submission deadline.",
+    confirmed:ALL, others:"no", detail:"full", site:"https://www.anc1912.org.za",
+    aliases:[/\banc\b/, /african national congress/, /ramaphosa/, /mbalula/],
+    promises:["Households on Sassa grants or the SRD grant automatically enrolled for free basic water, electricity, sanitation and refuse removal.","Mayors publish a 100-day programme; councillors meet residents within 30 days and report back regularly.","Ring-fence electricity revenue for maintenance and invest in water infrastructure such as pipelines and treatment works.","Pay legitimate suppliers within 30 days and digitise municipal services for businesses.","Stop water leaks and sewage spills within the first 100 days.","Blacklist contractors who fail to deliver."],
+    links:[["Manifesto (PDF)","https://www.anc1912.org.za/wp-content/uploads/2026/08/ANC-2026-Local-Government-Manifesto.pdf"]],
+    t:{ water:[2,"Stop leaks and sewage spills within 100 days; invest in pipelines and treatment"], power:[2,"Ring-fence electricity revenue for maintenance; more affordable electricity"], roads:[1,"Repair potholes and streetlights"], crime:[2,"Safety forums within 100 days; camera and lighting plan for hotspots"], housing:[1,"Upgrade informal settlements"], jobs:[2,"Local economic development desks; pay suppliers within 30 days"], bills:[1,"Lower cost of living, including more affordable electricity"], poor:[2,"Grant and SRD households enrolled automatically for free basic services"], clean:[2,"Zero tolerance for corruption; blacklist contractors who fail to deliver"], account:[2,"Mayors publish 100-day plans; councillors meet residents within 30 days"], inhouse:[0], community:[1,"Safety forums with faith, community and traditional leaders"], facilities:[1,"Clear illegal dumping and unblock stormwater drains"] } },
+  { abbr:"AMM", name:"Afrika Mayibuye Movement", title:"Jobs, Water and Service Delivery Now! (2026 manifesto)",
+    launched:"26 Sep 2026", place:"Tlamatlama Sports Grounds, Tembisa, Ekurhuleni",
+    footprint:"Says it will contest every ward; mayoral candidate named in Ekurhuleni and a campaign in KwaZulu-Natal's Ugu District.",
+    confirmed:["gp","kzn"], others:"check", detail:"partial", site:"https://www.afrikamayibuye.org", checked:"3 Nov 2026",
+    aliases:[/mayibuye/, /\bamm\b/, /shivambu/],
+    status:"The manifesto document itself was not found online. Points come from the party's own published launch speech, which sets out the manifesto's seven focus areas.",
+    promises:["A 24-hour service delivery command centre in every municipality it runs, with every fault tracked publicly.","Rapid-response teams for leaks and burst pipes, each fault given a restoration deadline; water-quality results published regularly.","Rebuild municipal technical teams and insource where direct delivery is more efficient, ending unnecessary dependence on tenders.","Turn public employment programmes into accredited training and pathways to stable jobs.","Cancel historical debt for indigent and child-headed households under lawful municipal processes.","Audit and publish a register of municipal land, and release serviced land for housing, schools, farming, industry, recreation and religious use.","Lifestyle audits, merit appointments, and published budgets, tenders and performance dashboards.","A formal role for traditional and royal leaders in municipal planning, and regular ward accountability meetings by councillors."],
+    links:[["Launch speech (party PDF)","https://www.afrikamayibuye.org/MAYIBUYE-President-Address-at-the-Manifesto-Launch.pdf"],["Inside Politics: manifesto launch","https://insidepolitic.co.za/afrika-mayibuye-commits-to-abolish-the-tender-system-if-its-elected-to-government-after-lge-2026/"],["SABC News: manifesto launch","https://www.sabcnews.com/sabcnews/1163834-2/"],["IOL: manifesto launch","https://iol.co.za/news/2026-09-26-shivambu-promises-to-wipe-out-poor-households-municipal-debt-if-his-new-party-wins/"]],
+    t:{ water:[2,"Rapid-response leak teams with restoration deadlines; published water-quality tests; sewer repairs"], power:[2,"Maintain transformers and substations; reduce losses; municipal rooftop solar and microgrids"], roads:[2,"Permanent roads and stormwater teams; one map of all roads in the municipality"], crime:[2,"Municipal policing, streetlights, CCTV in hotspots; action on drugs, extortion and cable theft"], housing:[2,"Published land register; serviced residential land; informal-settlement upgrading"], jobs:[2,"Public works turned into accredited training; trading spaces; local procurement"], bills:[2,"Historical debt cancelled for indigent and child-headed households; accurate billing"], poor:[2,"Ward support desks to help eligible families get free basic services"], clean:[2,"Lifestyle audits; merit appointments; published tenders; whistle-blower protection"], account:[2,"Ward service targets with monthly results; public case tracking"], inhouse:[2,"Rebuild municipal technical teams; insource where more efficient"], community:[2,"Traditional and faith leaders in planning; ward accountability meetings"], facilities:[2,"Guaranteed refuse collection; repaired sports grounds, pools, halls and libraries"] } },
+  { abbr:"BOSA", name:"Build One South Africa", title:"Local Government Manifesto 2026",
+    launched:"5 Sep 2026", place:"Fairview Primary School, Johannesburg",
+    footprint:"24 municipalities in Gauteng, the Western Cape, Limpopo, North West and the Free State (794 candidates).",
+    confirmed:["gp","wc","lp","nw","fs"], others:"no", detail:"full", site:"https://bosa.co.za",
+    aliases:[/\bbosa\b/, /build one/, /maimane/],
+    promises:["Candidates chosen on merit and vetted for integrity, including engineers and teachers.","Reliable clean water and electricity for homes and businesses.","Protect informal traders from criminalisation and give them trading space.","Publish its coalition plans and curb political interference in municipal administration.","No planned water cuts to schools, clinics and hospitals.","Audit municipal land and buildings within 90 days and release viable land within 24 months.","24-hour safety coordination centres in every metro and body cameras for metro police."],
+    links:[["Manifesto (PDF)","https://static.pmg.org.za/BOSA_LG_Manifesto_2026.pdf"]],
+    t:{ water:[2,"No planned water cuts to schools and clinics; fix leaks; engineers in charge"], power:[2,"Published fault repair times; ring-fenced revenue; Eskom debt plans"], roads:[2,"Pothole and traffic-light repair targets; taxi rank upgrades"], crime:[2,"Safety coordination centres; body cameras for metro police; hotspot CCTV"], housing:[2,"Audit municipal land within 90 days; clear title-deed backlogs"], jobs:[2,"Red-tape unit; protect informal traders; rates rebates for small firms"], bills:[1,"Accurate valuations and billing"], poor:[1,"Accurate indigent registers for free basic services"], clean:[2,"Merit hiring; instant dismissal for corruption; public tender dashboards"], account:[2,"A named official for every service; ward charters with repair times"], inhouse:[1,"Qualified engineers leading water services"], community:[2,"Participatory budgets; quarterly forums; councillors living in their wards"], facilities:[1,"Refuse backlog audits; parks opened as community hubs"] } },
+  { abbr:"DA", name:"Democratic Alliance", title:"Working for All",
+    launched:"8 Aug 2026", place:"Mary Fitzgerald Square, Johannesburg",
+    footprint:"Candidates submitted for all 257 municipalities.",
+    confirmed:ALL, others:"no", detail:"full", site:"https://www.da.org.za",
+    aliases:[/\bda\b/, /democratic alliance/, /hill.?lewis/, /zille/],
+    promises:["End cadre deployment; appoint officials on merit and act on poor performance.","Ring-fence water and electricity revenue for maintenance and new infrastructure.","Publish the price of every contract awarded, including any premium over the lowest qualifying bid.","Cut red tape for small businesses and partner with the private sector on infrastructure.","Public-private partnerships to build and maintain water treatment plants and electricity networks.","Vet contractors through industry bodies."],
+    links:[["Manifesto","https://www.da.org.za/policy/2026-local-government-manifesto"]],
+    t:{ water:[2,"Ring-fence water revenue; partnerships to build and run treatment plants"], power:[2,"Ring-fence electricity revenue; partnerships for electricity networks"], roads:[1,"Road repair (Johannesburg campaign)"], crime:[1,"Clamp down on crime to support local economies"], housing:[0], jobs:[2,"Cut red tape for small businesses; work with the private sector"], bills:[0], poor:[0], clean:[2,"End cadre deployment; publish every contract price; vet contractors"], account:[1,"Consequences for poor performance and mismanagement"], inhouse:[1,"Recruit more engineers, planners and finance officials"], community:[0], facilities:[1,"Refuse collection (Johannesburg campaign)"] } },
+  { abbr:"EFF", name:"Economic Freedom Fighters", title:"2026 Local Government Elections Manifesto",
+    launched:"25 Jul 2026", place:"Thohoyandou Stadium, Limpopo",
+    footprint:"Mayoral candidates in all eight metros plus Polokwane, Mbombela, Rustenburg and Sol Plaatje.",
+    confirmed:ALL, others:"no", detail:"full", site:"https://effonline.org",
+    aliases:[/\beff\b/, /economic freedom/, /malema/],
+    promises:["Insource municipal workers and use permanent municipal teams instead of contractors, including for roads.","Expand free basic services for the unemployed and Sassa grant recipients.","Upgrade sewers and wastewater plants; maintain street and traffic lights.","Push to raise local government's share of national revenue from about 9% toward 15%.","Use expropriation powers on abandoned land and hijacked buildings, and reserve municipal land for redistribution."],
+    links:[["Party statement","https://effonline.org/?p=38879"],["EWN report","https://www.ewn.co.za/2026/07/25/malema-promises-direct-municipal-insourcing-at-eff-manifesto-launch"]],
+    t:{ water:[2,"Repair pipes, upgrade reservoirs and sewer systems, end spills"], power:[2,"In-house electricians to repair and maintain networks"], roads:[2,"Permanent in-house teams for road maintenance"], crime:[1,"Street lighting; campaigns against drug abuse and gender-based violence"], housing:[2,"Expropriate abandoned land and hijacked buildings; reserve land for redistribution"], jobs:[2,"Permanent municipal jobs for artisans; markets for rural farmers"], bills:[0], poor:[2,"Expand free basic services for the unemployed and grant recipients"], clean:[1,"Clean governance and accountability"], account:[1,"Five-year commitments with measurable goals"], inhouse:[2,"Insource workers; end reliance on contractors and labour brokers"], community:[0], facilities:[2,"Maintain public facilities; remove illegal dumping sites"] } },
+  { abbr:"FF+", name:"Freedom Front Plus", title:"Municipal Elections Manifesto 2026 (10 points)",
+    launched:"12 Sep 2026", place:"Pretoria",
+    footprint:"About 80% of municipalities, with every ward contested in five provinces; mayoral candidates in Tshwane and Mangaung.",
+    confirmed:["gp","fs"], others:"check", detail:"full", site:"https://www.vfplus.org.za",
+    aliases:[/ff ?\+/, /ff ?plus/, /vf ?\+/, /vf ?plus/, /freedom front/, /vryheidsfront/, /mulder/, /groenewald/],
+    promises:["A turnaround plan for municipalities with set timeframes.","Structural reform of how municipalities are run.","Will not enter council coalitions with the EFF, MK or PAC.","Rates and tariff increases at or below inflation, with accurate bills.","Spend at least 8% of asset value on maintenance every year.","Devolve decisions to communities, with one town per local municipality."],
+    links:[["Manifesto (party site)","https://www.vfplus.org.za/municipal-elections/municipal-elections-manifesto-2026/"],["Manifesto (Polity download)","https://www.polity.org.za/article/vf-plus-municipal-elections-manifesto-2026-2026-09-15"]],
+    t:{ water:[2,"Fix existing infrastructure first; detect and repair leaks fast"], power:[2,"Smart meters against theft; no estimated readings; renewable rebates"], roads:[2,"At least 8% of asset value spent on maintenance yearly; fix potholes"], crime:[2,"CCTV, working streetlights, cooperation with neighbourhood watches"], housing:[0], jobs:[2,"Cut red tape on rezoning and trading permits"], bills:[2,"Rates and tariff increases at or below inflation; accurate bills"], poor:[1,"Updated indigent registers"], clean:[2,"Merit appointments; all council contracts made public"], account:[1,"Councillors held accountable for unfunded budgets"], inhouse:[1,"More engineers and tradesmen"], community:[2,"Decisions devolved to communities; one town per municipality"], facilities:[2,"Sewage plants and landfills prioritised; recycling projects"] } },
+  { abbr:"GOOD RISE", name:"GOOD and RISE Mzansi (joint campaign)", title:"Joint campaign platform; GOOD Cape Town manifesto (six pledges)",
+    launched:"Partnership agreed 22 May 2026; Cape Town manifesto 19 Sep 2026", place:"Athlone, Cape Town (Cape Town manifesto)",
+    footprint:"RISE Mzansi leads in Gauteng; GOOD leads in the Western Cape, where the joint campaign runs under the GOOD name.",
+    confirmed:["gp","wc"], others:"check", detail:"partial", site:"https://forgood.org.za",
+    aliases:[/good party/, /rise mzansi/, /de lille/, /zibi/, /herron/],
+    status:"No full manifesto document was found online; points come from the joint statement, reports of GOOD's Cape Town manifesto launch and the Johannesburg candidate's published plans.",
+    promises:["Reliable basic services, maintained infrastructure and well-managed municipal finances.","An anti-poverty focus, including informal settlements and the cost of living (Cape Town campaign).","One joint leadership structure for elected councillors, to avoid split caucuses.","Lower bills by trimming the city budget, reviewing electricity tariffs and scrapping the fixed water pipe levy (Cape Town).","City-built, rent-stabilised affordable housing on well-located public land, and opposing the sale of public land (Cape Town).","Free off-peak bus and train travel, and rail brought into one integrated transport network (Cape Town).","Six Cape Town pledges: an affordable, housed, equitable, safer, trusted and working city.","Youth hubs in gang-affected areas, alongside support for neighbourhood watches (Cape Town).","Regular refuse collection, clearing illegal dumping and one plan for the inner city (Johannesburg).","Repair Joburg Water and City Power, and protect the maintenance budget from being diverted (Johannesburg).","The same quality of service in poorer areas such as Alexandra as in wealthier areas such as Sandton (Johannesburg)."],
+    links:[["Joint statement","https://forgood.org.za/rise-mzansi-and-good-agree-to-amalgamate-campaign-structures-to-contest-2026-local-elections-together/"],["EWN: Cape Town plans","https://www.ewn.co.za/2026/10/20/r7bn-surplus-herron-says-cape-town-can-do-more-to-ease-residents-costs"],["Polity interview","https://www.polity.org.za/article/good-rise-mzansi-carve-up-gauteng-w-cape-to-fight-fragmentation-2026-10-29"],["RISE Mzansi: Johannesburg plans","https://vote.risemzansi.org/candidates/lukhona-mnguni"],["IOL: free off-peak transport pledge","https://iol.co.za/capeargus/news/2026-09-19-good-promises-free-off-peak-public-transport-for-cape-town-commuters/"],["Moneyweb: the six pledges","https://www.moneyweb.co.za/moneyweb-podcasts/the-ballot-sheet-with-ray-mahlaka/herrons-good-fight-to-unite-cape-towns-two-cities/"]],
+    t:{ water:[1,"Reliable basic services; repair Joburg Water (Johannesburg)"], power:[1,"Electricity tariff review (Cape Town); repair City Power (Johannesburg)"], roads:[2,"Free off-peak buses and trains; integrated transport network (Cape Town)"], crime:[2,"Youth hubs in gang-affected areas; support for neighbourhood watches (Cape Town)"], housing:[2,"City-built, rent-stabilised affordable housing on well-located public land (Cape Town)"], jobs:[1,"Skills programmes at youth hubs (Cape Town)"], bills:[2,"Trim the city budget, review electricity tariffs, scrap the fixed water pipe levy (Cape Town)"], poor:[1,"Anti-poverty focus"], clean:[1,"Restore trust in local government"], account:[1,"Joint leadership structure for councillors"], inhouse:[0], community:[0], facilities:[2,"Regular refuse collection and clearing illegal dumping (Johannesburg); waste management in informal settlements (Cape Town)"] } },
+  { abbr:"IFP", name:"Inkatha Freedom Party", title:"2026 LGE Manifesto (five-point plan)",
+    launched:"20 Sep 2026", place:"Princess Magogo Stadium, KwaMashu, KZN",
+    footprint:"Strongest in KwaZulu-Natal, with campaigns in Gauteng and Mpumalanga; fielding more candidates than in 2021.",
+    confirmed:["kzn","gp","mp"], others:"check", detail:"full", site:null,
+    aliases:[/\bifp\b/, /inkatha/, /hlabisa/],
+    promises:["Water first: preventative maintenance, fixing leaks and burst pipes, cutting losses and upgrading treatment.","Fix roads, potholes, streetlights, sanitation, waste collection and housing.","More support and a formal municipal role for traditional and Khoi-San leaders.","A municipal sanitary-dignity plan for women and girls, and women's safety in the budget.","Publish budgets and tenders, refer corruption for investigation and recover losses."],
+    links:[["eNCA report","https://www.enca.com/news-top-stories-videos/ifp-puts-water-heart-election-plan"],["eThekwini manifesto notice","https://allafrica.com/stories/202610020385.html"]],
+    t:{ water:[2,"Water first: preventative maintenance, fixing leaks, upgrading treatment"], power:[1,"Electricity prioritised in budgets and maintenance"], roads:[2,"Fix roads, potholes and streetlights"], crime:[1,"Gender-based violence desks, shelters and safety initiatives"], housing:[1,"Housing listed among basic services"], jobs:[0], bills:[0], poor:[0], clean:[2,"Corruption referred for investigation; losses recovered; tenders published"], account:[1,"Senior managers held to measurable outcomes"], inhouse:[1,"Qualified engineers; less reliance on outside providers"], community:[2,"Formal municipal role for traditional and Khoi-San leaders"], facilities:[1,"Waste collection; sanitary-dignity plan for women and girls"] } },
+  { abbr:"PA", name:"Patriotic Alliance", title:"2026 Local Government Manifesto",
+    launched:"Published by mid-Oct 2026", place:"Launch venue not confirmed in this search",
+    footprint:"Said in May 2026 it would contest every ward in all 257 municipalities; mayoral candidates confirmed for Johannesburg and Cape Town.",
+    confirmed:["gp","wc"], others:"check", detail:"full", site:null,
+    aliases:[/patriotic alliance/, /mckenzie/, /kunene/],
+    promises:["Three months without property rates for qualifying households.","Cancellation of some historic municipal debt.","A public report card after its first 100 days in office.","24-hour leak teams and public fault logs.","Transfer qualifying council houses to tenants of 20 years or more, with the municipality paying transfer costs."],
+    links:[["Daily Maverick review","https://dailymaverick.co.za/article/2026-10-18-pa-promises-debt-write-offs-and-a-3-month-rates-holiday"]],
+    t:{ water:[2,"Ring-fence water revenue; 24-hour leak teams; public fault logs"], power:[2,"Pay Eskom first; repair substations; easier rooftop solar"], roads:[2,"Tracked pothole repairs; back-up power at traffic lights; taxi ranks"], crime:[2,"Equip neighbourhood watches; link them to CCTV; lighting near schools"], housing:[2,"Council houses transferred to long-term tenants; title-deed backlogs cleared"], jobs:[2,"One-stop business desks; township trading spaces; suppliers paid in 30 days"], bills:[2,"Three-month rates holiday; old arrears cancelled for qualifying households"], poor:[1,"Arrears cancelled for indigent and low-income households"], clean:[2,"Open the books within 100 days; cap on mayoral cars; councillor spending published"], account:[2,"Public report card after 100 days; published repair times"], inhouse:[0], community:[1,"Libraries, halls and sports fields kept open; community rehab support"], facilities:[2,"Guaranteed weekly refuse day; free public Wi-Fi at facilities"] } },
+  { abbr:"SACP", name:"South African Communist Party", title:"2026 Local Government Election Manifesto",
+    launched:"16 Aug 2026", place:"TUT Soshanguve campus, Tshwane",
+    footprint:"First time contesting independently of the ANC; Western Cape candidates confirmed.",
+    confirmed:["wc"], others:"check", detail:"full", site:"https://sacp.org.za",
+    aliases:[/\bsacp\b/, /communist/, /mapaila/],
+    promises:["Ward-by-ward water and sanitation audits, with rapid-response teams for leaks and sewer spills.","Pro-poor electricity tariffs and an end to punitive disconnections of poor households.","Audit municipal land and use it for housing, food production and cooperatives.","Affordable public transport under public and community control."],
+    links:[["Launch statement","https://polity.org.za/article/statement-on-the-105th-anniversary-of-the-south-african-communist-party-and-the-launch-of-the-2026-local-government-election-manifesto-16-august-2026-2026-08-17"]],
+    t:{ water:[2,"Ward-by-ward audits; rapid-response teams for leaks and sewer spills"], power:[2,"Pro-poor tariffs; end punitive disconnections"], roads:[2,"Repair township and village roads; affordable public transport"], crime:[0], housing:[2,"Well-located social housing on audited municipal land"], jobs:[1,"Cooperatives and local food production"], bills:[1,"Pro-poor electricity tariffs"], poor:[1,"Protected lifeline services"], clean:[1,"Council seats as public service, not a business"], account:[0], inhouse:[2,"Properly staffed municipal technical units"], community:[2,"Community control and local people's power"], facilities:[1,"Municipal land for community facilities"] } },
+  { abbr:"MK", name:"uMkhonto weSizwe Party", title:"The People's Mandate 2026",
+    launched:"Released electronically 15 Oct 2026", place:"Launch rallies cancelled",
+    footprint:"First municipal election; mayoral candidates named in Johannesburg, Tshwane, Ekurhuleni, eThekwini, Mangaung, Nelson Mandela Bay and Buffalo City.",
+    confirmed:["gp","kzn","fs","ec"], others:"check", detail:"partial", site:"https://mkparty.org.za",
+    aliases:[/\bmk\b/, /\bmkp\b/, /umkhonto/, /zuma/],
+    status:"The full manifesto text could not be retrieved in this research; points come from news summaries.",
+    promises:["A binding People's Contract for every MK-run municipality, with measurable targets.","Mayors judged against 100-day, 1,000-day and five-year targets.","No appointments without the required qualifications and experience.","Radical economic transformation at the centre of municipal government.","Jobs through mining, agriculture, reindustrialisation, tourism and local infrastructure.","A stronger role for traditional leaders in municipal administration.","Enforce immigration and employment laws, act against employers who exploit undocumented workers, and reserve some service-industry opportunities for South African citizens.","Cheap electricity, water and transport through state-owned enterprises (a national-level position)."],
+    links:[["Manifesto (Polity download)","https://www.polity.org.za/article/mkp-the-peoples-mandate-2026-local-government-election-2026-10-20"],["The Citizen: electricity pledges","https://www.citizen.co.za/news/elections-what-the-anc-da-eff-and-mk-promise-on-electricity-as-load-reduction-lingers/"],["EWN: Gauteng mayoral candidates","https://www.ewn.co.za/2026/08/28/mk-party-mayoral-candidates-vow-to-tackle-corruption-and-crime-in-gauteng"]],
+    t:{ water:[1,"General commitment to improved basic services"], power:[1,"Cheap electricity through state-owned enterprises; expand capacity"], roads:[0], crime:[1,"Gauteng mayoral candidates pledge to tackle crime and corruption"], housing:[0], jobs:[2,"Jobs through mining, agriculture, reindustrialisation, tourism and infrastructure; some service-industry work reserved for citizens"], bills:[0], poor:[0], clean:[2,"No appointments without required qualifications and experience"], account:[2,"People's Contract with 100-day, 1,000-day and five-year targets"], inhouse:[1,"Skills transfer to rebuild municipal administration"], community:[1,"Stronger role for traditional leaders"], facilities:[0] } },
+  { abbr:"UDM", name:"United Democratic Movement", title:"2026 Local Government Elections Manifesto",
+    launched:"27 Jun 2026", place:"East London, Eastern Cape",
+    footprint:"National party, strongest in the Eastern Cape; mayoral candidate named in Buffalo City.",
+    confirmed:["ec"], others:"check", detail:"full", site:"https://udm.org.za",
+    aliases:[/\budm\b/, /united democratic/, /holomisa/],
+    promises:["Steady, routine maintenance of municipal infrastructure.","Consistent service delivery, with councillors present in their communities.","Municipalities judged by whether residents actually receive reliable services.","Release well-located land, upgrade informal settlements and act on hijacked buildings.","Written, public coalition agreements based on measurable outcomes."],
+    links:[["Manifesto (Polity download)","https://www.polity.org.za/article/udm-2026-local-government-elections-manifesto-2026-10-29"],["Daily Maverick review","https://www.dailymaverick.co.za/article/2026-09-04-manifesto-test-udm-promises-to-maintain-maintain-maintain"]],
+    t:{ water:[2,"Preventive maintenance, early leak detection, fast response"], power:[2,"Protect grids from theft; realistic, funded budgets"], roads:[2,"Road and stormwater maintenance; public transport planning"], crime:[2,"Protect infrastructure; youth sport and arts programmes"], housing:[2,"Release well-located land; act on hijacked buildings"], jobs:[2,"Support small businesses and traders; local procurement"], bills:[1,"Consult residents on tariffs; better billing"], poor:[0], clean:[2,"Accountability pledge; public, written coalition agreements"], account:[2,"Regular community meetings and performance reports"], inhouse:[0], community:[2,"Working ward committees; residents consulted"], facilities:[2,"Regular refuse collection; parks, libraries and halls maintained"] } }
+];
+PARTIES.forEach(p => { p.id = p.abbr; p.slug = "party-" + p.abbr.toLowerCase().replace(/[^a-z0-9]+/g, "-"); });
+const BY_NAME = [...PARTIES].sort((a, b) => a.name.localeCompare(b.name, "en", { sensitivity: "base" }));
+
+/* Metro mayoral candidates: [party label, candidate or null, note, party id if in PARTIES] */
+const METROS = [
+  { id:"jhb", name:"City of Johannesburg", prov:"gp", aliases:[/johannesburg/, /joburg/, /jozi/, /\bjhb\b/, /soweto/], list:[
+    ["ActionSA","Herman Mashaba","","ASA"],["African National Congress",null,"Shortlist only; no final candidate announced","ANC"],["African People's Convention (APC)","Mo-Afrika Mandla Mokoena","",""],["Al Jama-ah","Shireen Ebrahim","",""],["Build One South Africa","Nobuntu Hlazo-Webster","","BOSA"],["Democratic Alliance","Helen Zille","","DA"],["Economic Freedom Fighters","Dr Tlaleng Mofokeng","","EFF"],["Inkatha Freedom Party","Mlungisi Mabaso","","IFP"],["Land Party","Ntsiki Mazwai","",""],["Patriotic Alliance","Kenny Kunene","","PA"],["RISE Mzansi (with GOOD)","Lukhona Mnguni","","GOOD RISE"],["uMkhonto weSizwe Party","Bongani Baloyi","","MK"] ]},
+  { id:"tsh", name:"City of Tshwane", prov:"gp", aliases:[/tshwane/, /pretoria/], list:[
+    ["ActionSA","Dr Nasiphi Moya","","ASA"],["African National Congress",null,"Shortlist only; no final candidate announced","ANC"],["Build One South Africa","Martha Moshiga","","BOSA"],["Democratic Alliance","Cilliers Brink","","DA"],["Economic Freedom Fighters","Omphile Maotwe","","EFF"],["Freedom Front Plus","Willie Spies","","FF+"],["Inkatha Freedom Party","Douglas Ziyanda Zwane","","IFP"],["uMkhonto weSizwe Party","Nkele Annie Matime","","MK"] ]},
+  { id:"eku", name:"City of Ekurhuleni", prov:"gp", aliases:[/ekurhuleni/], list:[
+    ["ActionSA","Xolani Khumalo","","ASA"],["African National Congress",null,"Not finalised","ANC"],["Afrika Mayibuye Movement","Themba Nzimande","","AMM"],["Democratic Alliance","Khathutshelo Rasilingwane","","DA"],["Economic Freedom Fighters","Nthabiseng Tshivhenga","","EFF"],["Inkatha Freedom Party","Desmond Mchunu","","IFP"],["uMkhonto weSizwe Party","Thulani Shongwe","","MK"] ]},
+  { id:"eth", name:"eThekwini", prov:"kzn", aliases:[/ethekwini/, /durban/], list:[
+    ["ActionSA","Zwakele Mncwango","","ASA"],["African National Congress",null,"Not finalised; incumbent Cyril Xaba is among the nominees","ANC"],["Democratic Alliance","Haniff Hoosen","","DA"],["Economic Freedom Fighters","Hlengiwe Mkhaliphi","","EFF"],["Inkatha Freedom Party","Mkhuleko Hlengwa","","IFP"],["uMkhonto weSizwe Party","Mxolisi Phakathi","","MK"] ]},
+  { id:"cpt", name:"City of Cape Town", prov:"wc", aliases:[/cape town/], list:[
+    ["ActionSA","Dereleen James","","ASA"],["African National Congress",null,"Not announced","ANC"],["Build One South Africa","Roger Solomons","","BOSA"],["Democratic Alliance","Geordin Hill-Lewis","","DA"],["Economic Freedom Fighters","Nontando Nolutshungu","","EFF"],["GOOD (with RISE Mzansi)","Brett Herron","","GOOD RISE"],["Patriotic Alliance","Cheslyn Daniels","Formerly reported as Cheslyn Steenberg","PA"] ]},
+  { id:"nmb", name:"Nelson Mandela Bay", prov:"ec", aliases:[/nelson mandela bay/, /gqeberha/, /port elizabeth/], list:[
+    ["African National Congress",null,"Shortlist only; no final candidate announced","ANC"],["Democratic Alliance","Retief Odendaal","","DA"],["Economic Freedom Fighters","Sinawo Thambo","","EFF"],["National Alliance","Gary van Niekerk","",""],["uMkhonto weSizwe Party","Mvuleni Mapu","","MK"] ]},
+  { id:"bcm", name:"Buffalo City", prov:"ec", aliases:[/buffalo city/, /east london/], list:[
+    ["African National Congress",null,"Not announced","ANC"],["Democratic Alliance",null,"Not selected as of 1 Oct 2026","DA"],["Economic Freedom Fighters","Mkhululi Dlevu","","EFF"],["uMkhonto weSizwe Party","Mzwandile Vaaiboom","","MK"],["United Democratic Movement","Nqabayomzi Kwankwa","","UDM"] ]},
+  { id:"man", name:"Mangaung", prov:"fs", aliases:[/mangaung/, /bloemfontein/], list:[
+    ["African National Congress",null,"Shortlist only; no final candidate announced","ANC"],["Democratic Alliance","Werner Pretorius","","DA"],["Economic Freedom Fighters","Sam Matiase","","EFF"],["Freedom Front Plus","Elizabeth Snyman-van Deventer","","FF+"],["uMkhonto weSizwe Party","Mapaseka Mothibi","","MK"] ]}
+];
+METROS.forEach(m => m.list.sort((a, b) => a[0].localeCompare(b[0], "en", { sensitivity: "base" })));
+
+const OTHERS = [
+  ["African Transformation Movement (ATM)", null, "National party"],
+  ["African People's Convention (APC)", null, "Says it is contesting in seven provinces"],
+  ["Al Jama-ah", ["gp","wc","kzn"], "Campaigning in Lenasia, Tshwane, Cape Flats and Umzinto"],
+  ["AMCU Labour Party", null, "New party"],
+  ["Cape Independence Party", ["wc"], "Campaigns for Western Cape independence"],
+  ["Khoisan Revolution", ["nc"], "Expanding beyond Namaqualand and Upington"],
+  ["Land Party", ["gp"], "Johannesburg mayoral candidate named"],
+  ["Molemole Independent Voice", ["lp"], "Contesting four wards in Molemole"],
+  ["National Alliance", ["ec"], "Nelson Mandela Bay mayoral candidate named"],
+  ["National Coloured Congress (NCC)", ["wc"], ""],
+  ["National Freedom Party (NFP)", ["kzn"], ""],
+  ["Pan Africanist Congress (PAC)", null, "National party"],
+  ["Sedibeng Emfuleni Resident Association (SERA)", ["gp"], "Contesting Sedibeng wards"]
+];
+
+const NOTES = {
+  all: { h:"All provinces", li:[
+    "<strong>546</strong> of 732 registered parties are contesting, with 136,790 certified candidates for 10,526 seats.",
+    "Two metro-specific manifestos exist: the DA's <strong>Johannesburg</strong> manifesto (7 Mar 2026) and the IFP's <strong>eThekwini</strong> manifesto (4 Oct 2026). Pick Gauteng or KwaZulu-Natal to see them.",
+    "In metros and local councils you get two ballots (ward and party); district council areas add a third."
+  ]},
+  ec: { h:"Eastern Cape", li:["Nelson Mandela Bay has <strong>37</strong> parties on its party-list ballot.","Buffalo City and Nelson Mandela Bay are the province's two metros."]},
+  fs: { h:"Free State", li:["Mangaung is the province's metro."]},
+  gp: { h:"Gauteng", li:["Party-list ballots: Johannesburg <strong>75</strong> parties, Tshwane <strong>70</strong>, Ekurhuleni <strong>67</strong>, Emfuleni <strong>41</strong>.","Metro manifesto: the DA launched a <a href=\"https://www.dailymaverick.co.za/article/zille-reveals-das-bold-rescue-plan-to-get-joburg-working-at-manifesto-launch\" target=\"_blank\" rel=\"noopener\">Johannesburg-specific manifesto</a> on 7 Mar 2026."]},
+  kzn: { h:"KwaZulu-Natal", li:["<strong>111</strong> parties are contesting in the province.","eThekwini has <strong>69</strong> parties on its party-list ballot.","Metro manifesto: the IFP launched an <a href=\"https://allafrica.com/stories/202610020385.html\" target=\"_blank\" rel=\"noopener\">eThekwini manifesto</a> on 4 Oct 2026."]},
+  lp: { h:"Limpopo", li:["Polokwane has <strong>36</strong> parties on its party-list ballot; Capricorn District also has 36."]},
+  mp: { h:"Mpumalanga", li:["No province-specific figures were found in this research."]},
+  nw: { h:"North West", li:["Rustenburg has <strong>36</strong> parties on its party-list ballot."]},
+  nc: { h:"Northern Cape", li:["No province-specific figures were found in this research."]},
+  wc: { h:"Western Cape", li:["<strong>106</strong> parties and 33 independent candidates are contesting in the province.","Cape Town has <strong>55</strong> parties on its party-list ballot."]}
+};
+
+const SOURCES = [
+  ["IEC: Local Government Elections 2026 (date and voting hours)","https://www.elections.org.za/content/About-Us/IEC-Events/Local-Government-Elections-2026/"],
+  ["IEC: How to vote (ID, ballots, steps)","https://www.elections.org.za/pw/Voter/How-To-Vote"],
+  ["IEC via gov.za: 136,790 candidates certified, ballot sizes, voter helplines","https://www.gov.za/news/media-statements/electoral-commission-certifies-136-790-candidates-contest-2026-local"],
+  ["SAnews: 546 parties contesting","https://sanews.gov.za/south-africa/over-140-000-candidates-submit-nominations-2026-local-government-elections"],
+  ["SAnews: 111 parties in KwaZulu-Natal","https://www.sanews.gov.za/node/84700"],
+  ["EWN: 106 parties in the Western Cape","https://www.ewn.co.za/lge-2026-iec-prepares-8-million-ballots-for-the-western-cape/"],
+  ["EWN: how to find who is standing in your ward","https://www.ewn.co.za/2026/10/09/lge-2026-whos-standing-in-your-ward-here-s-how-to-find-out"],
+  ["Daily Maverick: metro mayoral candidates guide","https://www.dailymaverick.co.za/article/2026-10-01-local-government-elections-2026/"],
+  ["EWN: Tshwane mayoral candidates","https://www.ewn.co.za/2026/10/26/lge-2026-get-to-know-some-of-your-tshwane-mayoral-candidates"],
+  ["EWN: Ekurhuleni mayoral candidates","https://www.ewn.co.za/2026/10/27/lge-2026-get-to-know-some-of-your-ekurhuleni-mayoral-candidates"],
+  ["EWN: Mangaung mayoral candidates","https://www.ewn.co.za/2026/10/27/lge-2026-get-to-know-your-mangaung-mayoral-candidates"],
+  ["EWN: eThekwini mayoral candidates","https://www.ewn.co.za/2026/10/30/lge-2026-get-to-know-you-ethekwini-mayoral-candidates"],
+  ["EWN: Nelson Mandela Bay mayoral candidates","https://www.ewn.co.za/2026/10/29/lge-2026-get-to-know-your-nelson-mandela-bay-candidates"],
+  ["EWN: Buffalo City mayoral candidates","https://www.ewn.co.za/2026/10/29/lge-2026-get-to-know-your-buffalo-city-mayoral-candidates"],
+  ["EWN: Cape Town mayoral candidates (PA candidate now Cheslyn Daniels, formerly Steenberg)","https://www.ewn.co.za/2026/10/26/lge-2026-get-to-know-cape-towns-mayoral-candiates"],["Cape Times: PA Cape Town mayoral candidate","https://capetimes.co.za/news/2026-04-20-patriotic-alliance-names-cheslyn-steenberg-as-cape-town-mayoral-candidate/"],["EWN: IEC to add 181 ANC candidates after Constitutional Court ruling","https://www.ewn.co.za/2026/10/15/iec-to-amend-ballots-after-concourt-rules-in-favour-of-anc-in-candidate-list-dispute"],["EWN: IEC confirms ANC candidates on ballots","https://www.ewn.co.za/2026/10/19/anc-receives-confirmation-from-iec-that-its-candidates-will-be-included-on-ballots"],["IOL: Afrika Mayibuye manifesto launch","https://iol.co.za/news/2026-09-26-shivambu-promises-to-wipe-out-poor-households-municipal-debt-if-his-new-party-wins/"],["Inside Politics: Afrika Mayibuye manifesto launch","https://insidepolitic.co.za/afrika-mayibuye-commits-to-abolish-the-tender-system-if-its-elected-to-government-after-lge-2026/"],["The Citizen: party electricity pledges, incl. MK","https://www.citizen.co.za/news/elections-what-the-anc-da-eff-and-mk-promise-on-electricity-as-load-reduction-lingers/"],["RISE Mzansi: Johannesburg mayoral candidate plans","https://vote.risemzansi.org/candidates/lukhona-mnguni"],
+  ["Mail & Guardian: comparing party plans for municipalities","https://mg.co.za/news/south-africa/2026-10-29-fixing-sa-s-broken-municipalities/"],
+  ["Daily Maverick: ANC manifesto details","https://dailymaverick.co.za/article/2026-08-23-clock-it-anc-reheats-old-election-promises-in-2026-manifesto"],
+  ["TimesLIVE: ANC free basic services pledge","https://www.timeslive.co.za/opinion/2026-08-22-anc-wants-30-million-grant-recipients-to-get-free-basic-services/"],
+  ["Sunday Tribune: DA contract-price pledge","https://sundaytribune.co.za/news/2026-08-09-das-bold-manifesto-tackling-corruption-and-improving-municipal-governance/"],
+  ["Daily Maverick: EFF manifesto review","https://www.dailymaverick.co.za/article/2026-08-10-manifesto-test-the-revolution-promised-the-record-questioned/"],
+  ["Daily Maverick: IFP manifesto review","https://dailymaverick.co.za/article/2026-10-05-manifesto-test-ifp-offers-more-financial-support-for-traditional-leaders"],
+  ["Daily Maverick: SACP manifesto review","https://dailymaverick.co.za/article/2026-08-23-manifesto-test-sacp-s-power-to-the-people-and-a-working-class-embraced"],
+  ["Daily Maverick: PA manifesto review","https://www.dailymaverick.co.za/article/2026-10-18-pa-promises-debt-write-offs-and-a-3-month-rates-holiday"],
+  ["Daily Maverick: UDM manifesto review","https://www.dailymaverick.co.za/article/2026-09-04-manifesto-test-udm-promises-to-maintain-maintain-maintain"],
+  ["ActionSA 2026 manifesto (PDF)","https://www.actionsa.org.za/wp-content/uploads/2026/09/ActionSA-LGE-Manifesto-2026-Final-.pdf"],
+  ["BOSA 2026 manifesto (PDF)","https://static.pmg.org.za/BOSA_LG_Manifesto_2026.pdf"],
+  ["ACDP 2026 summary manifesto (PDF)","https://acdp.org.za/MiniManifesto2026LGE.pdf"],
+  ["FF Plus 2026 manifesto (Politicsweb)","https://www.politicsweb.co.za/news/the-ff-plus-vf-plus-lge-2026-manifesto"],
+  ["EWN: GOOD's Cape Town plans","https://www.ewn.co.za/2026/10/20/r7bn-surplus-herron-says-cape-town-can-do-more-to-ease-residents-costs"],
+  ["Inside Politics: ACDP manifesto launch","https://insidepolitic.co.za/integrity-is-a-service-delivery-issue-says-thring-at-acdp-manifesto-launch/"],
+  ["Briefly: ActionSA manifesto launch","https://briefly.co.za/politics/254307-actionsa-launches-election-manifesto-crime-law-enforcement-centre/"],
+  ["Briefly: FF Plus manifesto launch","https://briefly.co.za/politics/253211-ff-rules-coalitions-eff-mk-party-pac-november-elections/"],
+  ["SABC News: BOSA manifesto launch","https://www.sabcnews.com/sabcnews/bosa-promises-to-protect-informal-traders-from-criminalisation/"],
+  ["Business Day: MK manifesto release","https://www.businessday.co.za/politics/2026-10-13-mk-party-cancels-manifesto-rally-as-financial-questions-hang-over-election-campaign/"]
+];
+
+/* ---------- helpers ---------- */
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
+const ext = (u, l) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(l)} ↗</a>`;
+const store = {
+  get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+  set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+};
+function inProvince(p, prov) { return prov === "all" || p.confirmed.includes(prov) || p.others === "check"; }
+function scopeFor(p, prov) {
+  if (prov === "all") return null;
+  if (p.confirmed.includes(prov)) return "yes";
+  if (p.others === "check") return "check";
+  return null;
+}
+function scopePill(p, prov) {
+  const s = scopeFor(p, prov);
+  return s === "yes" ? `<span class="pill yes">Confirmed here</span>` : s === "check" ? `<span class="pill check">Check your ballot</span>` : "";
+}
+function metroRows(m) {
+  return m.list.map(([party, cand, note]) => `<tr><td>${esc(party)}</td><td>${cand ? esc(cand) + (note ? ` <span class="none">(${esc(note)})</span>` : "") : `<span class="none">Not announced${note ? " · " + esc(note) : ""}</span>`}</td></tr>`).join("");
+}
+
+/* ---------- views ---------- */
+const VIEWS = ["guide","quiz","vote","ask"];
+function showView(v) {
+  VIEWS.forEach(n => {
+    $("#view-" + n).hidden = n !== v;
+    $("#tab-" + n).setAttribute("aria-selected", String(n === v));
+  });
+  if (v === "ask" && !$("#log").children.length) askIntro();
+}
+document.querySelector(".tabs").addEventListener("click", (e) => {
+  const b = e.target.closest(".tab"); if (!b) return;
+  if (location.hash.slice(1) === b.dataset.view) showView(b.dataset.view);
+  else location.hash = b.dataset.view;
+});
+window.addEventListener("hashchange", route);
+function route() {
+  const h = location.hash.slice(1);
+  if (VIEWS.includes(h)) showView(h);
+  else if (provName[h] && h !== "all") { guide.prov = h; renderGuide(); showView("guide"); }
+}
+
+/* ---------- guide ---------- */
+const guide = { prov: "all", q: "" };
+{ const saved = store.get("lge-prov"); if (saved && provName[saved]) guide.prov = saved; }
+
+function renderGuide() {
+  $("#chips").innerHTML = PROV.map(([k, n]) => `<button class="chip" data-k="${k}" aria-pressed="${guide.prov === k}">${esc(n)}</button>`).join("");
+  const n = NOTES[guide.prov];
+  $("#pnote").innerHTML = `<h2>${esc(n.h)}</h2><ul>${n.li.map(x => `<li>${x}</li>`).join("")}</ul>`;
+  renderMayors(); renderList(); renderOthers();
+}
+function renderMayors() {
+  const ms = guide.prov === "all" ? METROS : METROS.filter(m => m.prov === guide.prov);
+  $("#mayors-wrap").hidden = !ms.length;
+  $("#mayors").innerHTML = ms.map(m => `<details class="metro" ${guide.prov !== "all" ? "open" : ""}>
+      <summary>${esc(m.name)}<span>${esc(provName[m.prov])}</span></summary>
+      <table class="mtable">${metroRows(m)}</table>
+    </details>`).join("");
+}
+function matches(text) { return !guide.q || text.toLowerCase().includes(guide.q.toLowerCase()); }
+function renderList() {
+  const rows = []; let shown = 0;
+  for (const p of BY_NAME) {
+    if (guide.prov !== "all" && !scopeFor(p, guide.prov)) continue;
+    if (!matches([p.name, p.abbr, p.title, p.footprint, ...p.promises].join(" "))) continue;
+    shown++;
+    const site = p.site ? ext(p.site, "Party website") : "";
+    rows.push(`<article class="party" id="${p.slug}">
+      <div class="${p.abbr.length > 4 ? "box long" : "box"}" aria-hidden="true">${esc(p.abbr)}</div>
+      <div>
+        <div class="phead"><h3>${esc(p.name)}</h3>${scopePill(p, guide.prov)}</div>
+        <p class="mtitle"><span>Manifesto:</span> <strong>${esc(p.title)}</strong></p>
+        <dl class="meta">
+          <dt>Launched</dt><dd>${esc(p.launched)} · ${esc(p.place)}</dd>
+          <dt>Contesting</dt><dd>${esc(p.footprint)}</dd>
+          <dt>Last checked</dt><dd>${esc(p.checked || CHECKED)}</dd>
+        </dl>
+        <ul class="promises">${p.promises.map(x => `<li>${esc(x)}</li>`).join("")}</ul>
+        ${p.status ? `<p class="status">${esc(p.status)}</p>` : ""}
+        <p class="links">${p.links.map(([l, u]) => ext(u, l)).join("")}${site}</p>
+      </div>
+    </article>`);
+  }
+  $("#list").innerHTML = rows.length ? rows.join("") : `<p class="empty">No party matches that search in ${esc(provName[guide.prov])}.</p>`;
+  $("#count").textContent = `${shown} of ${PARTIES.length} parties`;
+}
+function renderOthers() {
+  const rows = OTHERS.filter(([n, provs, note]) => (guide.prov === "all" || !provs || provs.includes(guide.prov)) && matches(n + " " + note))
+    .map(([n, provs, note]) => `<tr><td>${esc(n)}</td><td>${esc(provs ? provs.map(k => provName[k]).join(", ") : "National · check your ballot")}</td><td>${esc(note || "—")}</td></tr>`);
+  $("#others").innerHTML = rows.length ? rows.join("") : `<tr><td colspan="3">None listed for this filter.</td></tr>`;
+}
+$("#chips").addEventListener("click", (e) => {
+  const b = e.target.closest(".chip"); if (!b) return;
+  guide.prov = b.dataset.k; store.set("lge-prov", guide.prov); renderGuide();
+});
+$("#q").addEventListener("input", (e) => { guide.q = e.target.value.trim(); renderList(); renderOthers(); });
+function openInGuide(id) {
+  const p = PARTIES.find(x => x.id === id); if (!p) return;
+  if (quiz.prov) guide.prov = quiz.prov;
+  guide.q = ""; $("#q").value = ""; renderGuide();
+  location.hash = "guide"; showView("guide");
+  const el = document.getElementById(p.slug);
+  if (el) { el.scrollIntoView({ behavior: "smooth", block: "start" }); el.classList.remove("flash"); void el.offsetWidth; el.classList.add("flash"); }
+}
+
+/* ---------- quiz ---------- */
+const blankW = () => Object.fromEntries(TOPICS.map(t => [t[0], 0]));
+const quiz = { step: 1, prov: null, w: blankW(), a: {} };
+{ const saved = store.get("lge-prov"); if (saved && provName[saved] && saved !== "all") quiz.prov = saved; }
+const quizParties = (prov) => PARTIES.filter(p => inProvince(p, prov));
+
+function score(p) {
+  let pts = 0, max = 0; const hits = [], misses = [], app = [];
+  for (const [k, label] of TOPICS) {
+    const w = quiz.w[k]; if (!w) continue;
+    const [lvl, ev] = p.t[k];
+    pts += w * lvl; max += w * 2;
+    (lvl > 0 ? hits : misses).push({ label, ev, w, lvl });
+  }
+  for (const q of QUESTIONS) {
+    const v = quiz.a[q.id]; if (!v) continue;
+    const opt = q.opts.find(o => o[0] === v); max += 4;
+    if (opt[2].includes(p.id)) { pts += 4; app.push(opt[1]); }
+  }
+  hits.sort((a, b) => b.w - a.w || b.lvl - a.lvl);
+  return { pct: max ? Math.round(100 * pts / max) : 0, hits, misses, app };
+}
+function evidenceList(s) {
+  return `<ul class="ev">
+    ${s.hits.map(h => `<li><b>${esc(h.label)}${h.w === 2 ? " ★" : ""}:</b> ${esc(h.ev)}${h.lvl === 1 ? " (general)" : ""}</li>`).join("")}
+    ${s.app.map(a => `<li><b>Approach:</b> ${esc(a)}</li>`).join("")}
+    ${s.misses.length ? `<li class="miss">Nothing found on: ${esc(s.misses.map(m => m.label).join(", "))}</li>` : ""}
+  </ul>`;
+}
+function partyLinks(p) {
+  return [ext(p.links[0][1], "Read about its manifesto"), p.site ? ext(p.site, "Party website") : ""].filter(Boolean).join(" · ");
+}
+function stepHtml() {
+  const s = quiz.step;
+  if (s === 1) return `<h2 class="step">Where are you registered to vote?</h2>
+    <p class="hint">You can only vote in the ward where you're registered, so pick that province.</p>
+    <div class="provs">${PROV.filter(p => p[0] !== "all").map(([k, n]) => `<button class="prov" data-prov="${k}" aria-pressed="${quiz.prov === k}"><b>${esc(n)}</b><span>${quizParties(k).length} parties compared</span></button>`).join("")}</div>
+    <div class="nav"><span></span><button class="btn primary" data-act="to2" ${quiz.prov ? "" : "disabled"}>Next: your priorities</button></div>`;
+  if (s === 2) {
+    const n = Object.values(quiz.w).filter(v => v > 0).length;
+    return `<h2 class="step">What matters most to you locally?</h2>
+    <p class="hint">Mark each issue. "Top priority" counts double. Skip anything you don't mind about.</p>
+    <div class="topics">${TOPICS.map(([k, label, sub]) => `<div class="topic">
+      <div><h3>${esc(label)}</h3><p>${esc(sub)}</p></div>
+      <div class="seg" role="radiogroup" aria-label="${esc(label)}">${[[0,"Skip"],[1,"Matters"],[2,"Top priority"]].map(([v, l]) => `<input type="radio" name="w-${k}" id="w-${k}-${v}" value="${v}" ${quiz.w[k] === v ? "checked" : ""}><label for="w-${k}-${v}">${l}</label>`).join("")}</div>
+    </div>`).join("")}</div>
+    <p class="tally" id="tally">${n} of ${TOPICS.length} issues selected</p>
+    <div class="nav"><button class="btn" data-act="to1">Back</button>
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><p class="err" id="err2" hidden>Pick at least one issue.</p><button class="btn primary" data-act="to3">Next: your approach</button></div></div>`;
+  }
+  if (s === 3) return `<h2 class="step">How would you like things done?</h2>
+    <p class="hint">Optional. Each answer credits only the parties whose manifestos state that approach.</p>
+    <div class="qs">${QUESTIONS.map(q => `<fieldset><legend>${esc(q.text)}</legend>
+      ${q.opts.map(([v, l]) => `<label class="opt"><input type="radio" name="${q.id}" id="${q.id}-${v}" value="${v}" ${quiz.a[q.id] === v ? "checked" : ""}><span>${esc(l)}</span></label>`).join("")}
+      <label class="opt"><input type="radio" name="${q.id}" id="${q.id}-none" value="" ${!quiz.a[q.id] ? "checked" : ""}><span>No preference</span></label></fieldset>`).join("")}</div>
+    <div class="nav"><button class="btn" data-act="to2">Back</button><button class="btn primary" data-act="to4">See my result</button></div>`;
+  return resultsHtml();
+}
+function resultsHtml() {
+  const list = quizParties(quiz.prov).map(p => ({ p, s: score(p) }))
+    .sort((a, b) => b.s.pct - a.s.pct || a.p.name.localeCompare(b.p.name));
+  const top = list[0].s.pct;
+  const best = top > 0 ? list.filter(x => x.s.pct === top) : [];
+  const rest = list.filter(x => !best.includes(x));
+  const topNames = Object.entries(quiz.w).filter(([, v]) => v === 2).map(([k]) => topicName[k]);
+  const bestHtml = best.length ? best.map(({ p, s }) => `<div class="best">
+      <p class="label">${best.length > 1 ? "Joint closest match" : "Your closest manifesto match"} in ${esc(provName[quiz.prov])}</p>
+      <h3>${esc(p.name)}</h3>
+      <div class="row"><span class="pct">${s.pct}% match</span>${scopePill(p, quiz.prov)}${p.detail === "partial" ? `<span class="pill thin">Partial</span>` : ""}</div>
+      <div class="bar" role="img" aria-label="${s.pct}% match"><i style="width:${s.pct}%"></i></div>
+      ${evidenceList(s)}
+      <div class="acts"><a class="btn primary" href="${esc(p.links[0][1])}" target="_blank" rel="noopener">Read about its manifesto ↗</a>${p.site ? `<a class="btn" href="${esc(p.site)}" target="_blank" rel="noopener">Party website ↗</a>` : ""}<button class="btn" data-guide="${esc(p.id)}">See it in the guide</button></div>
+    </div>`).join("")
+    : `<div class="best"><p class="label">No match found</p><h3>None of the manifestos in this research address what you picked</h3><p class="hint">Try marking more issues, or browse the guide.</p></div>`;
+  let rank = best.length, last = -1;
+  const restHtml = rest.map(({ p, s }, i) => {
+    if (s.pct !== last) { rank = best.length + i + 1; last = s.pct; }
+    return `<article class="r">
+      <div class="rank">${rank}</div>
+      <div>
+        <div class="rh"><h3>${esc(p.name)}</h3><span class="pct">${s.pct}%</span>${scopePill(p, quiz.prov)}${p.detail === "partial" ? `<span class="pill thin">Partial</span>` : ""}</div>
+        <div class="bar" role="img" aria-label="${s.pct}% match"><i style="width:${s.pct}%"></i></div>
+        <details><summary>What matched (${s.hits.length} of ${s.hits.length + s.misses.length} issues${s.app.length ? `, ${s.app.length} approach` : ""})</summary>
+          ${evidenceList(s)}
+          <p class="links">${partyLinks(p)} · <button class="btn small" data-guide="${esc(p.id)}">See it in the guide</button></p>
+        </details>
+      </div>
+    </article>`;
+  }).join("");
+  return `<h2 class="step">Your result</h2>
+    <p class="summary">${topNames.length ? `Your top priorities: <b>${esc(topNames.join(", "))}</b>. ` : ""}${list.length} parties compared in ${esc(provName[quiz.prov])}. ★ marks your top priorities.</p>
+    <p class="caveat"><strong>This is a starting point, not a recommendation.</strong> A high match means a party's manifesto says a lot about the issues you picked. It doesn't show which party is likely to deliver, and parties marked Partial may offer more than was found. Read the manifestos, and check which parties are on your own ward ballot.</p>
+    ${bestHtml}
+    <p class="section-label">Compare with</p>
+    <div class="res">${restHtml || `<p class="empty">No other parties to compare.</p>`}</div>
+    <div class="nav"><button class="btn" data-act="to2">Change answers</button><button class="btn" data-act="restart">Start over</button></div>`;
+}
+function renderQuiz() {
+  [...$("#rail").children].forEach((d, i) => { d.className = (i + 1 === quiz.step) ? "on" : (i + 1 < quiz.step ? "done" : ""); });
+  $("#quiz-stage").innerHTML = stepHtml();
+  $("#how").open = quiz.step === 4 ? $("#how").open : false;
+}
+function quizGo(step) { quiz.step = step; renderQuiz(); $("#view-quiz").scrollIntoView({ behavior: "smooth", block: "start" }); }
+$("#quiz-stage").addEventListener("click", (e) => {
+  const pv = e.target.closest("[data-prov]");
+  if (pv) { quiz.prov = pv.dataset.prov; store.set("lge-prov", quiz.prov); renderQuiz(); return; }
+  const g = e.target.closest("[data-guide]");
+  if (g) { openInGuide(g.dataset.guide); return; }
+  const a = e.target.closest("[data-act]"); if (!a || a.disabled) return;
+  const act = a.dataset.act;
+  if (act === "to1") quizGo(1);
+  else if (act === "to2") { if (quiz.prov) quizGo(2); }
+  else if (act === "to3") { if (!Object.values(quiz.w).some(v => v > 0)) { $("#err2").hidden = false; return; } quizGo(3); }
+  else if (act === "to4") quizGo(4);
+  else if (act === "restart") { quiz.w = blankW(); quiz.a = {}; quizGo(1); }
+});
+$("#quiz-stage").addEventListener("change", (e) => {
+  const name = e.target.name || "";
+  if (name.startsWith("w-")) {
+    quiz.w[name.slice(2)] = Number(e.target.value);
+    const n = Object.values(quiz.w).filter(v => v > 0).length;
+    const t = $("#tally"); if (t) t.textContent = `${n} of ${TOPICS.length} issues selected`;
+    const er = $("#err2"); if (er && n) er.hidden = true;
+  } else if (/^q\d$/.test(name)) quiz.a[name] = e.target.value || null;
+});
+
+/* ---------- assistant (answers only from the data above) ---------- */
+const PROV_ALIASES = {
+  ec:[/eastern cape/, /\bec\b/, /gqeberha/, /port elizabeth/, /nelson mandela bay/, /east london/, /buffalo city/, /mthatha/],
+  fs:[/free ?state/, /bloemfontein/, /mangaung/, /qwaqwa/, /welkom/],
+  gp:[/gauteng/, /\bgp\b/, /johannesburg/, /joburg/, /jozi/, /\bjhb\b/, /pretoria/, /tshwane/, /ekurhuleni/, /soweto/, /emfuleni/, /midrand/, /sedibeng/],
+  kzn:[/kwazulu/, /\bkzn\b/, /durban/, /ethekwini/, /pietermaritzburg/, /msunduzi/, /newcastle/],
+  lp:[/limpopo/, /polokwane/, /thohoyandou/, /capricorn/, /giyani/, /molemole/],
+  mp:[/mpumalanga/, /mbombela/, /nelspruit/, /emalahleni/, /witbank/, /volksrust/],
+  nw:[/north ?west/, /rustenburg/, /mahikeng/, /mafikeng/, /potchefstroom/],
+  nc:[/northern cape/, /kimberley/, /sol plaatje/, /upington/, /namaqualand/, /springbok/],
+  wc:[/western cape/, /\bwc\b/, /cape town/, /stellenbosch/, /mossel bay/, /khayelitsha/, /mitchells plain/, /paarl/]
+};
+const TOPIC_ALIASES = {
+  water:[/water/, /sewage/, /sewer/, /\btaps?\b/, /leak/, /sanitation/, /toilet/, /drought/, /reservoir/],
+  power:[/electric/, /\bpower\b/, /eskom/, /load.?shedding/, /outage/, /solar/, /prepaid/, /\bmeters?\b/, /substation/],
+  roads:[/\broads?\b/, /pothole/, /transport/, /\btaxi/, /\bbus(es)?\b/, /traffic/, /stormwater/],
+  crime:[/crime/, /safety/, /\bsafe\b/, /police/, /cctv/, /security/, /\bgbv\b/, /gender.?based/, /\bdrugs?\b/, /hijack/],
+  housing:[/\bhous(ing|es?)\b/, /\bhomes?\b/, /\bland\b/, /title deed/, /\brdp\b/, /informal settlement/, /\bshacks?\b/, /\brent(al)?s?\b/],
+  jobs:[/\bjobs?\b/, /employ/, /business/, /trader/, /spaza/, /smme/, /economy/, /procurement/, /youth/],
+  bills:[/\brates?\b/, /\bbills?\b/, /tariff/, /billing/, /\bdebt\b/, /arrears/, /cost of living/, /affordab/],
+  poor:[/free basic/, /indigent/, /\bgrants?\b/, /sassa/, /\bsrd\b/, /\bpoor\b/, /pension/],
+  clean:[/corrupt/, /cadre/, /tender/, /merit/, /patronage/, /fraud/, /\baudits?\b/, /whistle/],
+  account:[/accountab/, /100.?day/, /report card/, /deadline/, /councillor/, /performance/],
+  inhouse:[/insourc/, /outsourc/, /contractor/, /engineer/, /\bstaff/, /workers?\b/, /skills/, /vacanc/],
+  community:[/ward committee/, /traditional/, /amakhosi/, /\bkhoi/, /participat/, /devol/, /community voice/],
+  facilities:[/refuse/, /rubbish/, /garbage/, /\bwaste\b/, /\bbins?\b/, /dumping/, /\bparks?\b/, /librar/, /\bhalls?\b/, /recycl/, /wi-?fi/]
+};
+const RE = {
+  hello: /^(hi|hello|hey|help|sawubona|molo|dumela|howzit|hallo|good (morning|afternoon|evening))\b|what can you (do|answer)|how do(es)? (this|you) work/,
+  reco: /(who|which|what)( party| one)?.{0,20}(should|must|do|to|can) (i )?vote|vote for (who|whom)|who to vote|best party|which (party|one) is (the )?(best|better)|better party|should i vote|recommend|your (opinion|view|pick|choice|favourite)|what do you think|do you (support|like|prefer|trust)|who will win|going to win|predict|\bpolls? (say|show)/,
+  judge: /\b(good|bad|corrupt|racist|best|worst|better|worse|honest|trustworthy|liars?|useless|incompetent|evil)\b/,
+  when: /\b(when|date|what day|what time|hours|open|close|closing)\b/,
+  voteword: /\b(vote|voting|election|elections|polls?)\b/,
+  mayor: /mayor/,
+  idq: /\bid\b|identity|what (do|should) i (need|bring|take)|bring with|which documents?/,
+  ward: /ward candidate|standing in my ward|who('?s| is) standing|in my ward|on my ballot|ward ballot/,
+  where: /(where|which).{0,25}(vote|voting station|polling)|voting station|polling station|am i registered|\bregist/,
+  howmany: /how many .{0,20}(parties|candidates|seats)/,
+  ballots: /ballot|how (do|does) (i|voting|it) work|steps|photo|spoil|mistake/,
+  metro: /(provincial|metro|city|regional|province.?specific|local) manifesto/,
+  others: /(small|smaller|other) parties|no manifesto|without (a )?manifesto|independent/,
+  link: /\blink|\bread\b|download|\bpdf\b|website|where can i (find|read|see|get)|full manifesto/,
+  who: /who('?s| is| are)? (contesting|standing|running|on the ballot)|which parties|what parties|list (of )?parties|parties in/,
+  report: /error|mistake in (the|this) (guide|page)|correction|wrong information|contact/
+};
+function detect(list, text) { return Object.keys(list).filter(k => list[k].some(r => r.test(text))); }
+function detectParties(text, raw) {
+  const found = PARTIES.filter(p => p.aliases.some(r => r.test(text)));
+  if (/\bGOOD\b/.test(raw) || /\bRISE\b/.test(raw)) { const g = PARTIES.find(p => p.id === "GOOD RISE"); if (!found.includes(g)) found.push(g); }
+  if (/\bPA\b/.test(raw)) { const g = PARTIES.find(p => p.id === "PA"); if (!found.includes(g)) found.push(g); }
+  return found.sort((a, b) => a.name.localeCompare(b.name));
+}
+const SRC = `<p class="src">From this guide's research, checked 3 Nov 2026.</p>`;
+const ELSEWHERE = `For anything else, contact the IEC (elections.org.za, 0800 11 8000, WhatsApp 0600 88 0000) or the parties directly, and use Africa Check or news outlets to check claims.`;
+
+function topicLines(parties, topics) {
+  let out = "";
+  for (const k of topics) {
+    const yes = parties.filter(p => p.t[k][0] > 0);
+    const no = parties.filter(p => p.t[k][0] === 0);
+    out += `<p><b>${esc(topicName[k])}</b></p>`;
+    if (yes.length) out += `<ul>${yes.map(p => `<li><b>${esc(p.name)}:</b> ${esc(p.t[k][1])}${p.t[k][0] === 1 ? " (general)" : ""}</li>`).join("")}</ul>`;
+    if (no.length) out += `<p>Nothing specific found in this research for: ${esc(no.map(p => p.name).join(", "))}.</p>`;
+  }
+  return out;
+}
+function partySummary(p, prov) {
+  const where = prov ? (p.confirmed.includes(prov) ? `Confirmed contesting in ${provName[prov]}.` : p.others === "check" ? `Registered nationally; not confirmed in ${provName[prov]}, so check your ballot.` : `Not contesting in ${provName[prov]} according to this research.`) : p.footprint;
+  return `<p><b>${esc(p.name)}</b> · manifesto: ${esc(p.title)} (${esc(p.launched)}).</p>
+    <p>${esc(where)}</p>
+    <ul>${p.promises.slice(0, 5).map(x => `<li>${esc(x)}</li>`).join("")}</ul>
+    <p>${p.links.map(([l, u]) => ext(u, l)).join(" · ")}${p.site ? " · " + ext(p.site, "Party website") : ""}</p>`;
+}
+function metroAnswer(ms) {
+  return ms.map(m => `<p><b>${esc(m.name)}</b> (${esc(provName[m.prov])})</p><ul>${m.list.map(([party, cand, note]) => `<li>${esc(party)}: ${cand ? esc(cand) + (note ? " (" + esc(note) + ")" : "") : "not announced" + (note ? " (" + esc(note) + ")" : "")}</li>`).join("")}</ul>`).join("")
+    + `<p>Councils elect mayors after the vote. This list comes from news reports up to 30 Oct 2026 and may be incomplete.</p>`;
+}
+function answer(raw) {
+  const text = raw.toLowerCase().replace(/[’`]/g, "'").replace(/\s+/g, " ").trim();
+  if (!text) return null;
+  const provs = detect(PROV_ALIASES, text);
+  const topics = detect(TOPIC_ALIASES, text);
+  const parties = detectParties(text, raw);
+  const metros = METROS.filter(m => m.aliases.some(r => r.test(text)));
+  const prov = provs[0] || null;
+  const pool = prov ? BY_NAME.filter(p => inProvince(p, prov)) : BY_NAME;
+
+  if (RE.hello.test(text) && !parties.length && !topics.length && !provs.length) return introHtml();
+
+  if (RE.idq.test(text) && !parties.length && !topics.length)
+    return `<p>Bring one of these (IEC): a <b>green barcoded ID book</b>, a <b>smart ID card</b>, or a <b>temporary ID certificate</b>. It is scanned at the door to confirm you are registered.</p>` + SRC;
+
+  let jt = text;
+  if (parties.some(p => p.id === "GOOD RISE") && /\bGOOD\b/.test(raw)) jt = jt.replace(/\bgood\b/g, "");
+  const judging = parties.length > 0 && RE.judge.test(jt);
+  if (RE.reco.test(text) || judging) {
+    let out = judging && !RE.reco.test(text)
+      ? `<p>I don't judge parties or assess claims about them. This guide only records what each party promises in its manifesto. For fact-checks, see Africa Check or established news outlets.</p>`
+      : `<p>I can't tell you who to vote for, and I don't rate or judge parties. That choice is yours. The <a href="#quiz">Priorities quiz</a> shows which manifestos say the most about what you care about; then read those manifestos yourself.</p>`;
+    if (topics.length) out += `<p>What this research found${prov ? ` for parties in ${esc(provName[prov])}` : ""} (promises only, not an assessment of any party's record):</p>` + topicLines(parties.length ? parties : pool, topics);
+    return out + SRC;
+  }
+
+  if (RE.report.test(text) && !parties.length && !topics.length)
+    return `<p>To report a mistake in this guide, email <b>lge2026corrections@gmail.com</b> with the correction and a source. Corrections are checked against the party's own manifesto or official records and fixed as soon as possible.</p>` + SRC;
+
+  if (RE.mayor.test(text)) {
+    if (metros.length) return metroAnswer(metros) + SRC;
+    if (parties.length) {
+      return parties.map(p => {
+        const rows = METROS.map(m => { const e = m.list.find(x => x[3] === p.id); return e ? `<li>${esc(m.name)}: ${e[1] ? esc(e[1]) : "not announced" + (e[2] ? " (" + esc(e[2]) + ")" : "")}</li>` : ""; }).filter(Boolean);
+        return `<p><b>${esc(p.name)}</b></p>` + (rows.length ? `<ul>${rows.join("")}</ul>` : `<p>No metro mayoral candidate found in this research.</p>`);
+      }).join("") + `<p>Councils elect mayors after the vote. Names come from news reports up to 30 Oct 2026.</p>` + SRC;
+    }
+    const ms = prov ? METROS.filter(m => m.prov === prov) : METROS;
+    if (!ms.length) return `<p>${esc(provName[prov])} has no metro municipality, so this guide has no mayoral candidate list for it.</p>` + SRC;
+    return metroAnswer(ms) + SRC;
+  }
+
+  if (RE.voteword.test(text) && RE.when.test(text) && !parties.length)
+    return `<p>Voting day is <b>Wednesday 4 November 2026</b>, and voting stations are open from <b>07:00 to 21:00</b> (IEC).</p><p>You can only vote at the voting station for the district where you are registered.</p>` + SRC;
+  if (RE.idq.test(text) && !parties.length)
+    return `<p>Bring one of these (IEC): a <b>green barcoded ID book</b>, a <b>smart ID card</b>, or a <b>temporary ID certificate</b>. It is scanned at the door to confirm you are registered.</p>` + SRC;
+  if (RE.ward.test(text) && !parties.length)
+    return `<p>To see who is standing in your ward, enter your address at ballotbox.co.za, an independent site (not the IEC). This research did not find a public candidate search on the IEC's own site. To check your registration and voting station, SMS your ID number to <b>32810</b> or call <b>0800 11 8000</b>.</p>` + SRC;
+  if (RE.howmany.test(text))
+    return `<p><b>546</b> of 732 registered parties are contesting nationally, with 136,790 certified candidates for 10,526 council seats. KwaZulu-Natal has 111 contesting parties and the Western Cape 106. Party-list ballots: Johannesburg 75 parties, Tshwane 70, eThekwini 69, Ekurhuleni 67, Cape Town 55.</p>` + SRC;
+  if (RE.where.test(text) && !parties.length)
+    return `<p>This guide can't look up voting stations or registration. The IEC can: SMS your ID number to <b>32810</b>, call <b>0800 11 8000</b>, WhatsApp <b>0600 88 0000</b>, or visit elections.org.za.</p>` + SRC;
+  if (RE.ballots.test(text) && !parties.length && !topics.length)
+    return `<p>In metros and local councils you get two ballot papers: one for a ward councillor and one for a party. In district council areas you get a third.</p>
+      <ul><li>Your ID is scanned and your name is crossed off the voters' roll; your left thumbnail is marked with ink.</li><li>Check that each ballot has a stamp on the back.</li><li>Make one clear X per ballot, fold it and put it in the box.</li><li>If you make a mistake, ask an official for a new ballot. Photographing your marked ballot is not allowed.</li></ul>` + SRC;
+  if (RE.metro.test(text))
+    return `<p>Almost every party published one national manifesto. This research found two metro-specific ones: the DA's Johannesburg manifesto (7 Mar 2026) and the IFP's eThekwini manifesto (4 Oct 2026).</p>` + SRC;
+  if (RE.others.test(text) && !parties.length)
+    return `<p>These parties are also contesting, but this research found no 2026 manifesto for them:</p><ul>${OTHERS.filter(o => !prov || !o[1] || o[1].includes(prov)).map(o => `<li>${esc(o[0])} (${esc(o[1] ? o[1].map(k => provName[k]).join(", ") : "national")})</li>`).join("")}</ul><p>Independent ward candidates are not covered in this guide.</p>` + SRC;
+
+  if (parties.length) {
+    if (topics.length) {
+      let out = topicLines(parties, topics);
+      out += `<p>${parties.map(p => ext(p.links[0][1], p.name + " manifesto")).join(" · ")}</p>`;
+      return out + SRC;
+    }
+    if (RE.link.test(text))
+      return parties.map(p => `<p><b>${esc(p.name)}:</b> ${p.links.map(([l, u]) => ext(u, l)).join(" · ")}${p.site ? " · " + ext(p.site, "Party website") : ""}</p>`).join("") + SRC;
+    return parties.map(p => partySummary(p, prov)).join("") + SRC;
+  }
+
+  if (topics.length)
+    return `<p>What parties${prov ? ` in ${esc(provName[prov])}` : ""} promise, listed alphabetically:</p>` + topicLines(pool, topics) + SRC;
+
+  if (provs.length || RE.who.test(text)) {
+    if (!prov) return `<p>Which province? For example: "Who is contesting in Limpopo?"</p>`;
+    const conf = BY_NAME.filter(p => p.confirmed.includes(prov));
+    const chk = BY_NAME.filter(p => !p.confirmed.includes(prov) && p.others === "check");
+    const oth = OTHERS.filter(o => o[1] && o[1].includes(prov));
+    return `<p><b>${esc(provName[prov])}</b></p><ul>${NOTES[prov].li.map(x => `<li>${x}</li>`).join("")}</ul>
+      <p><b>Parties with a 2026 manifesto, confirmed here:</b> ${conf.length ? esc(conf.map(p => p.name).join(", ")) : "none confirmed in this research"}.</p>
+      <p><b>Registered nationally, check your ballot:</b> ${esc(chk.map(p => p.name).join(", "))}.</p>
+      ${oth.length ? `<p><b>Also contesting, no manifesto found:</b> ${esc(oth.map(o => o[0]).join(", "))}.</p>` : ""}` + SRC;
+  }
+
+  if (RE.link.test(text))
+    return `<p>Manifesto links for every party are on its card in the <a href="#guide">Manifesto guide</a>. Ask about a specific party and I'll give you its links.</p>` + SRC;
+
+  return `<p>I don't have that in my research. I only cover the parties' 2026 local-election manifestos, where they are contesting, metro mayoral candidates and voting-day basics gathered for this guide up to 3 November 2026.</p><p>${ELSEWHERE}</p>`;
+}
+function introHtml() {
+  return `<p>Hello. I can answer questions about the parties' 2026 local-election manifestos, where they are contesting, metro mayoral candidates and voting-day basics.</p>
+    <p>I only use the research gathered for this page up to 3 November 2026. I can't search the internet, I don't give opinions, and I won't tell you who to vote for.</p>
+    <p>${ELSEWHERE}</p>`;
+}
+function addMsg(who, html) {
+  const d = document.createElement("div");
+  d.className = "msg " + who;
+  d.innerHTML = html;
+  $("#log").appendChild(d);
+  $("#log").scrollTop = $("#log").scrollHeight;
+}
+function askIntro() { addMsg("bot", introHtml()); }
+const SUGS = ["Who is contesting in KwaZulu-Natal?","What do parties promise on electricity?","Who are the mayoral candidates in Tshwane?","What ID do I need to vote?","How do I find who is standing in my ward?","When do polls open?"];
+$("#sugs").innerHTML = SUGS.map(s => `<button class="chip" type="button">${esc(s)}</button>`).join("");
+$("#sugs").addEventListener("click", (e) => { const b = e.target.closest(".chip"); if (b) ask(b.textContent); });
+function ask(q) {
+  q = String(q).slice(0, 300);
+  if (!q.trim()) return;
+  addMsg("me", esc(q));
+  addMsg("bot", answer(q) || introHtml());
+}
+$("#ask-form").addEventListener("submit", (e) => { e.preventDefault(); const i = $("#ask-input"); ask(i.value); i.value = ""; i.focus(); });
+$("#ask-clear").addEventListener("click", () => { $("#log").innerHTML = ""; askIntro(); });
+$("#log").addEventListener("click", (e) => {
+  const a = e.target.closest('a[href^="#"]'); if (!a) return;
+  e.preventDefault(); location.hash = a.getAttribute("href").slice(1);
+});
+
+/* ---------- share + report ---------- */
+const SHARE_MSG = "Voting on Wednesday 4 November (07:00–21:00)? This free, independent guide shows each party's 2026 local-election manifesto by province, metro mayoral candidates, voting-day basics, and a quiz to see which manifestos match your priorities. Not linked to any party. " + SITE_URL;
+$("#share-text").value = SHARE_MSG;
+$("#wa-link").href = "https://wa.me/?text=" + encodeURIComponent(SHARE_MSG);
+function copyFrom(el, okEl) {
+  const done = () => { okEl.hidden = false; setTimeout(() => { okEl.hidden = true; }, 2000); };
+  const fallback = () => { el.focus(); el.select(); try { if (document.execCommand("copy")) done(); } catch (e) {} };
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(el.value).then(done, fallback);
+  else fallback();
+}
+$("#copy-share").addEventListener("click", () => copyFrom($("#share-text"), $("#share-ok")));
+$("#copy-email").addEventListener("click", () => copyFrom($("#err-email"), $("#email-ok")));
+
+/* ---------- after polls close (21:00 SAST = 19:00 UTC on 4 Nov 2026) ---------- */
+function checkClosed() { const open = Date.now() < Date.UTC(2026, 10, 4, 19, 0, 0); $("#closed").hidden = open; $("#tracker").hidden = open; }
+$("#print-btn").addEventListener("click", () => { document.querySelectorAll(".metro").forEach(d => { d.open = true; }); window.print(); });
+checkClosed(); setInterval(checkClosed, 60000);
+
+/* ---------- copy deterrent (does not affect inputs or text boxes; right-click is allowed) ---------- */
+const editable = (el) => el && el.closest && el.closest("input, textarea");
+["copy","cut"].forEach(ev => document.addEventListener(ev, (e) => { if (!editable(document.activeElement)) e.preventDefault(); }));
+document.addEventListener("dragstart", (e) => { if (!editable(e.target)) e.preventDefault(); });
+
+/* ---------- start ---------- */
+$("#sources").innerHTML = SOURCES.map(([l, u]) => `<li>${ext(u, l)}</li>`).join("");
+renderGuide();
+renderQuiz();
+showView("guide");
+route();
+</script>
+
+</body>
+</html>
