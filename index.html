@@ -79,7 +79,8 @@ button, input, textarea { font: inherit; color: inherit; }
 .stripe i:nth-child(5) { background: var(--sa-blue); }
 .closed { border: 2px solid var(--ink); background: var(--card); border-radius: 10px; padding: 12px 14px; margin-bottom: 18px; font-size: 14px; }
 .closed strong { text-transform: uppercase; letter-spacing: .03em; }
-.brand { display: flex; align-items: center; gap: 12px; }
+.brand { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.theme-btn { order: 3; margin-left: auto; white-space: nowrap; }
 .flag { width: 54px; height: 36px; flex: none; border-radius: 3px; box-shadow: 0 0 0 1px var(--rule); display: block; }
 .eyebrow { font-family: var(--f-mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 14px; }
 .eyebrow b { color: var(--ink); font-weight: 500; }
@@ -294,6 +295,7 @@ footer li { overflow-wrap: anywhere; }
         <polygon points="1.0817,0 4.6816,2.4 9,2.4 9,3.6 4.6816,3.6 1.0817,6 0,6 0,5.2789 3.4183,3 0,0.7211 0,0" fill="#007749"/>
         <polygon points="0,1.2018 2.6973,3 0,4.7982" fill="#000000"/>
       </svg>
+      <button class="btn small theme-btn" type="button" id="theme-btn" aria-label="Switch colour theme">Dark mode</button>
       <div class="eyebrow"><span>Local Government Elections</span><span><b>Wed 4 Nov 2026</b></span><span>Polls 07:00–21:00</span><span>Checked 3 Nov 2026</span></div>
     </div>
     <h1>Party manifestos, by province</h1>
@@ -1139,6 +1141,14 @@ checkClosed(); setInterval(checkClosed, 60000);
 const editable = (el) => el && el.closest && el.closest("input, textarea");
 ["copy","cut"].forEach(ev => document.addEventListener(ev, (e) => { if (!editable(document.activeElement)) e.preventDefault(); }));
 document.addEventListener("dragstart", (e) => { if (!editable(e.target)) e.preventDefault(); });
+
+/* ---------- light / dark mode (remembered on this device) ---------- */
+function isDark() { const t = document.documentElement.dataset.theme; return t ? t === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches; }
+function syncThemeBtn() { const d = isDark(); $("#theme-btn").textContent = d ? "Light mode" : "Dark mode"; $("#theme-btn").setAttribute("aria-pressed", String(d)); }
+{ const t = store.get("lge-theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; }
+$("#theme-btn").addEventListener("click", () => { const next = isDark() ? "light" : "dark"; document.documentElement.dataset.theme = next; store.set("lge-theme", next); syncThemeBtn(); });
+try { window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", syncThemeBtn); } catch (e) {}
+syncThemeBtn();
 
 /* ---------- start ---------- */
 $("#sources").innerHTML = SOURCES.map(([l, u]) => `<li>${ext(u, l)}</li>`).join("");
