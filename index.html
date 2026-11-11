@@ -267,6 +267,13 @@ footer li { overflow-wrap: anywhere; }
   .best h3 { font-size: 27px; }
   .vrow { grid-template-columns: minmax(0, 1fr); gap: 4px; }
 }
+.govs { display: grid; gap: 8px; margin-top: 4px; }
+.gov { border: 1px solid var(--rule); border-radius: 8px; padding: 10px 12px; background: var(--bg); }
+.gov-h { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 10px; align-items: baseline; }
+.gov-seats { margin: 6px 0 0; display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 14px; }
+.gov-seats span { white-space: nowrap; }
+.gov-s { margin: 6px 0 0; font-size: 13px; color: var(--muted); }
+.gov-s strong { color: var(--ink); }
 .printrow { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; margin-top: 12px; }
 @media print {
   :root { --bg: #fff; --card: #fff; --ink: #000; --muted: #333; --rule: #bbb; }
@@ -284,7 +291,7 @@ footer li { overflow-wrap: anywhere; }
 
 <div class="wrap protect" id="app">
   <div class="stripe" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-  <div class="closed" id="closed" hidden><strong>Voting has closed.</strong> Official results come from the IEC: <a href="https://results.elections.org.za/dashboards/lge" target="_blank" rel="noopener">results.elections.org.za ↗</a>. This guide stays online as a record of what parties promised, and a promise tracker will follow (see the Manifesto guide).</div>
+  <div class="closed" id="closed" hidden><strong>The election is over.</strong> Voting took place on 4 November and the IEC declared the results on 8 November: <a href="https://results.elections.org.za/dashboards/lge" target="_blank" rel="noopener">results.elections.org.za ↗</a>. This guide stays online as a record of what parties promised. See Official Results, Who Governs Each Metro and the Promise Tracker in the Manifesto guide.</div>
   <header>
     <div class="brand">
       <svg class="flag" viewBox="0 0 9 6" role="img" aria-label="Flag of South Africa">
@@ -296,7 +303,7 @@ footer li { overflow-wrap: anywhere; }
         <polygon points="0,1.2018 2.6973,3 0,4.7982" fill="#000000"/>
       </svg>
       <button class="btn small theme-btn" type="button" id="theme-btn" aria-label="Switch colour theme">Dark mode</button>
-      <div class="eyebrow"><span>Local Government Elections</span><span><b>Wed 4 Nov 2026</b></span><span>Polls 07:00–21:00</span><span>Checked 3 Nov 2026</span></div>
+      <div class="eyebrow"><span>Local Government Elections</span><span>Election held <b>Wed 4 Nov 2026</b></span><span>Results declared 8 Nov</span><span>Manifestos checked 3 Nov 2026</span></div>
     </div>
     <h1>Party manifestos, by province</h1>
     <p class="lede">Every party below has published a 2026 local-election manifesto, or the closest thing to one. Pick your province to see who is contesting there. <strong>546 parties are on ballots nationwide</strong>, so this covers the parties with manifestos found in a targeted search, not every name on your ballot. Parties are listed alphabetically; promises are summarised in plain words, so read the manifesto itself before you decide.</p>
@@ -305,7 +312,7 @@ footer li { overflow-wrap: anywhere; }
 
   <nav class="tabs" role="tablist" aria-label="Sections">
     <button class="tab" role="tab" id="tab-guide" data-view="guide" aria-controls="view-guide">Manifesto guide</button>
-    <button class="tab" role="tab" id="tab-quiz" data-view="quiz" aria-controls="view-quiz">Priorities quiz</button>
+    <button class="tab" role="tab" id="tab-quiz" data-view="quiz" aria-controls="view-quiz">Compare promises</button>
     <button class="tab" role="tab" id="tab-vote" data-view="vote" aria-controls="view-vote">Voting day</button>
     <button class="tab" role="tab" id="tab-ask" data-view="ask" aria-controls="view-ask">Ask the guide</button>
   </nav>
@@ -321,9 +328,20 @@ footer li { overflow-wrap: anywhere; }
     </div>
     <section class="pnote" id="pnote" aria-live="polite"></section>
     <div class="printrow"><button class="btn small" type="button" id="print-btn">Print or save as PDF</button><span class="count">Prints the province you have selected</span></div>
+    <section class="pnote" id="results" hidden>
+      <h2>Official Results</h2>
+      <p class="sub">The IEC declared the final results on Sunday 8 November 2026 and found the election free and fair. Figures below are from the IEC's declared results as reported by the sources listed, ordered by votes or seats won. They are facts, not commentary on any party.</p>
+      <div id="results-body"></div>
+    </section>
+    <section class="pnote" id="governs" hidden>
+      <h2>Who Governs Each Metro</h2>
+      <p class="sub">A party needs more than half the seats to govern alone. Where no party has a majority, a coalition or minority government must be agreed. Each council elects its mayor at its first sitting, which must be held within 14 days of the results being declared. Seats shown are for the five largest parties in each council. This list is updated as mayors are elected.</p>
+      <div class="govs" id="governs-list"></div>
+    </section>
     <section class="pnote" id="tracker" hidden>
       <h2>Promise Tracker</h2>
-      <p class="sub">Tracking starts once the IEC declares the results. Every party that wins seats will be tracked with the same method: each promise listed in this guide is marked <strong>Not started</strong>, <strong>In progress</strong>, <strong>Done</strong> or <strong>Not kept</strong>, and every update links to a source such as a council report, an audit or a news report. No party is tracked more closely than another.</p>
+      <p class="sub">Each metro's governing party or coalition is tracked with the same method: promises show <strong>Not yet reviewed</strong> until the first review; after that, every promise listed in this guide is marked <strong>Not started</strong>, <strong>In progress</strong>, <strong>Done</strong> or <strong>Not kept</strong>, and every update links to a source such as a council report, an audit or a news report. A metro is added once its government is formed. The first review is due 100 days after each mayor takes office.</p>
+      <div id="tracker-body"></div>
     </section>
     <div id="mayors-wrap">
       <p class="section-label">Metro mayoral candidates</p>
@@ -381,7 +399,7 @@ footer li { overflow-wrap: anywhere; }
 
   <!-- ASSISTANT -->
   <section id="view-ask" role="tabpanel" aria-labelledby="tab-ask" hidden>
-    <div class="scope"><strong>What this assistant covers.</strong> It answers only from the research behind this page, gathered up to 3 November 2026: the parties' 2026 local-election manifestos, where they are contesting, metro mayoral candidates and voting-day basics. It can't search the internet, it doesn't give opinions, and it won't tell you who to vote for. For anything else, ask the IEC (0800 11 8000, WhatsApp 0600 88 0000) or the parties directly.</div>
+    <div class="scope"><strong>What this assistant covers.</strong> It answers only from the research behind this page, gathered up to 3 November 2026 (official results added up to 11 November): the parties' 2026 local-election manifestos, where they contested, metro mayoral candidates, voting-day basics and the declared results. It can't search the internet, it doesn't give opinions, and it won't tell you who to vote for. For anything else, ask the IEC (0800 11 8000, WhatsApp 0600 88 0000) or the parties directly.</div>
     <div class="log" id="log" role="log" aria-live="polite" aria-label="Conversation"></div>
     <form class="ask" id="ask-form" autocomplete="off">
       <input id="ask-input" type="text" maxlength="300" placeholder="Ask about a party, an issue or your province" aria-label="Your question">
@@ -979,7 +997,8 @@ const RE = {
   others: /(small|smaller|other) parties|no manifesto|without (a )?manifesto|independent/,
   link: /\blink|\bread\b|download|\bpdf\b|website|where can i (find|read|see|get)|full manifesto/,
   who: /who('?s| is| are)? (contesting|standing|running|on the ballot)|which parties|what parties|list (of )?parties|parties in/,
-  report: /error|mistake in (the|this) (guide|page)|correction|wrong information|contact/
+  report: /error|mistake in (the|this) (guide|page)|correction|wrong information|contact/,
+  results: /result|\bseats?\b|who won|\bwon\b|winner|outcome|hung|coalition|majority|who governs|governing|tracker/
 };
 function detect(list, text) { return Object.keys(list).filter(k => list[k].some(r => r.test(text))); }
 function detectParties(text, raw) {
@@ -1034,13 +1053,20 @@ function answer(raw) {
   if (RE.reco.test(text) || judging) {
     let out = judging && !RE.reco.test(text)
       ? `<p>I don't judge parties or assess claims about them. This guide only records what each party promises in its manifesto. For fact-checks, see Africa Check or established news outlets.</p>`
-      : `<p>I can't tell you who to vote for, and I don't rate or judge parties. That choice is yours. The <a href="#quiz">Priorities quiz</a> shows which manifestos say the most about what you care about; then read those manifestos yourself.</p>`;
+      : `<p>I can't tell you who to vote for, and I don't rate or judge parties. That choice is yours. The <a href="#quiz">Compare promises</a> quiz shows which manifestos say the most about what you care about; then read those manifestos yourself.</p>`;
     if (topics.length) out += `<p>What this research found${prov ? ` for parties in ${esc(provName[prov])}` : ""} (promises only, not an assessment of any party's record):</p>` + topicLines(parties.length ? parties : pool, topics);
     return out + SRC;
   }
 
   if (RE.report.test(text) && !parties.length && !topics.length)
     return `<p>To report a mistake in this guide, email <b>lge2026corrections@gmail.com</b> with the correction and a source. Corrections are checked against the party's own manifesto or official records and fixed as soon as possible.</p>` + SRC;
+
+  if (RE.results.test(text) && !topics.length) {
+    const rs = metros.length ? METRO_RESULTS.filter(r => metros.some(m => m.id === r.id)) : (prov ? METRO_RESULTS.filter(r => (METROS.find(m => m.id === r.id) || {}).prov === prov) : METRO_RESULTS);
+    return `<p>The IEC declared the final results on 8 November 2026. National vote shares: ${NATIONAL.map(([n, v]) => `${esc(n)} ${v}%`).join(", ")}. 74 of 213 councils have an outright majority.</p>`
+      + (rs.length ? `<ul>${rs.map(r => `<li><b>${esc(metroName(r.id))}</b> (${r.total} seats, ${Math.floor(r.total / 2) + 1} for a majority): ${r.seats.map(([p, n]) => `${esc(p)} ${n}`).join(", ")}. ${r.governs ? "Governing: " + esc(r.governs) + "." : "Hung council; coalition talks under way."}</li>`).join("")}</ul>` : "")
+      + `<p>See Who Governs Each Metro and the Promise Tracker in the <a href="#guide">Manifesto guide</a>. Figures as reported up to ${RESULTS_AS_OF}; the IEC is the official source.</p>` + SRC;
+  }
 
   if (RE.mayor.test(text)) {
     if (metros.length) return metroAnswer(metros) + SRC;
@@ -1147,8 +1173,58 @@ $("#copy-share").addEventListener("click", () => { copyFrom($("#share-text"), $(
 $("#wa-link").addEventListener("click", () => count("shares"));
 $("#copy-email").addEventListener("click", () => copyFrom($("#err-email"), $("#email-ok")));
 
+
+/* ---------- after the election: official results, who governs, promise tracker ---------- */
+const RESULTS_AS_OF = "11 Nov 2026";
+const NATIONAL = [["African National Congress",30.76],["Democratic Alliance",24.64],["uMkhonto weSizwe Party",9.77],["Economic Freedom Fighters",6.22],["ActionSA",5.67]];
+/* Seats per metro: [metro id, total seats, [[party, seats], ...] largest first], status, governing, mayor */
+const METRO_RESULTS = [
+  { id:"jhb", total:270, seats:[["DA",91],["ANC",63],["ActionSA",43],["EFF",17],["MK",15]], governs:null, mayor:null },
+  { id:"tsh", total:214, seats:[["DA",74],["ActionSA",48],["ANC",44],["FF Plus",17],["EFF",13]], governs:null, mayor:null },
+  { id:"eku", total:224, seats:[["DA",66],["ANC",59],["ActionSA",40],["MK",15],["EFF",14]], governs:null, mayor:null },
+  { id:"eth", total:223, seats:[["MK",86],["DA",57],["ANC",37],["IFP",15],["ActionSA",7]], governs:null, mayor:null },
+  { id:"cpt", total:235, seats:[["DA",133],["ANC",33],["EFF",9],["PA",9],["FF Plus",8]], governs:"DA (outright majority)", mayor:null },
+  { id:"nmb", total:120, seats:[["DA",53],["ANC",32],["EFF",7],["PA",4],["SACP",4]], governs:null, mayor:null },
+  { id:"bcm", total:100, seats:[["ANC",42],["UDM",19],["DA",17],["EFF",7],["SACP",5]], governs:null, mayor:null },
+  { id:"man", total:101, seats:[["ANC",35],["DA",34],["EFF",9],["FF Plus",6],["PA",4]], governs:null, mayor:null }
+];
+const RESULT_SOURCES = [
+  ["SABC News: IEC declares the elections free and fair (8 Nov)","https://www.sabcnews.com/sabcnews/iec-declares-2026-local-government-elections-free-and-fair/"],
+  ["BusinessTech: final results and metro seats (8 Nov)","https://businesstech.co.za/news/government/883205/final-2026-election-results-announced/"],
+  ["Mail & Guardian: final IEC results (8 Nov)","https://mg.co.za/news/south-africa/2026-11-08-anc-barely-hangs-on-as-da-and-actionsa-make-gains-in-final-iec-results/"],
+  ["Explain: seats needed in each metro (11 Nov)","https://explain.co.za/2026/11/11/seven-metros-no-majority-and-a-whole-lot-of-horse-trading-coalition-haggling-will-decide-big-cities-next-five-years/"],
+  ["IEC results dashboard","https://results.elections.org.za/dashboards/lge"]
+];
+/* Tracker: one entry per metro once its government is formed. Statuses: "Not yet reviewed" (before the first review) | "Not started" | "In progress" | "Done" | "Not kept". */
+const TRACKER = [
+  { metro:"cpt", party:"DA", since:"Council not yet sworn in", note:"Promises from the DA's 2026 manifesto, as listed in this guide. Statuses will be reviewed 100 days after the mayor takes office.",
+    items: () => PARTIES.find(p => p.id === "DA").promises.map(x => ({ promise:x, status:"Not yet reviewed", source:null })) }
+];
+const metroName = (id) => (METROS.find(m => m.id === id) || {}).name || id;
+function renderAfter() {
+  const pct = (v) => v.toFixed(2).replace(/\.?0+$/, "") + "%";
+  $("#results-body").innerHTML = `<ul>${NATIONAL.map(([n, v]) => `<li><strong>${esc(n)}</strong>: ${pct(v)} of the national vote</li>`).join("")}</ul>
+    <p class="sub">74 of 213 councils have a party with an outright majority; most of the rest are hung. Only Cape Town has an outright winner among the eight metros. Figures as reported up to ${RESULTS_AS_OF}.</p>
+    <p class="links">${RESULT_SOURCES.map(([l, u]) => ext(u, l)).join("")}</p>`;
+  $("#governs-list").innerHTML = METRO_RESULTS.map(r => {
+      const maj = Math.floor(r.total / 2) + 1;
+      return `<div class="gov">
+        <div class="gov-h"><strong>${esc(metroName(r.id))}</strong><span class="count">${r.total} seats · ${maj} for a majority</span></div>
+        <p class="gov-seats">${r.seats.map(([p, n]) => `<span>${esc(p)} <b>${n}</b></span>`).join("")}</p>
+        <p class="gov-s">${r.governs ? `<strong>Governing: ${esc(r.governs)}</strong>` : `<span class="none">Hung council · coalition talks under way</span>`} · Mayor: ${r.mayor ? esc(r.mayor) : "not yet elected"}</p>
+      </div>`;
+    }).join("");
+  $("#tracker-body").innerHTML = TRACKER.map(t => {
+    const items = t.items();
+    return `<details class="metro" open><summary>${esc(metroName(t.metro))}<span>${esc(t.party)} · ${esc(t.since)}</span></summary>
+      <p class="sub" style="margin:8px 0 0">${esc(t.note)}</p>
+      <table class="mtable">${items.map(i => `<tr><td>${esc(i.promise)}</td><td><span class="pill check">${esc(i.status)}</span>${i.source ? " " + ext(i.source[1], i.source[0]) : ""}</td></tr>`).join("")}</table>
+    </details>`;
+  }).join("") + `<p class="sub">Other metros are added once their governments are formed.</p>`;
+}
 /* ---------- after polls close (21:00 SAST = 19:00 UTC on 4 Nov 2026) ---------- */
-function checkClosed() { const open = Date.now() < Date.UTC(2026, 10, 4, 19, 0, 0); $("#closed").hidden = open; $("#tracker").hidden = open; }
+function checkClosed() { const open = Date.now() < Date.UTC(2026, 10, 4, 19, 0, 0); $("#closed").hidden = open; $("#tracker").hidden = open; const declared = Date.now() >= Date.UTC(2026, 10, 8, 0, 0, 0); $("#results").hidden = !declared; $("#governs").hidden = !declared; }
+renderAfter();
 $("#print-btn").addEventListener("click", () => { document.querySelectorAll(".metro").forEach(d => { d.open = true; }); window.print(); });
 checkClosed(); setInterval(checkClosed, 60000);
 

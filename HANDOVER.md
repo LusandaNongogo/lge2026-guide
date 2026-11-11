@@ -70,6 +70,14 @@ There is also a footer with the disclaimer ("Why I made this"), Report an error 
 5. **After results:** optionally turn the page into a promise tracker, applied equally to every party that wins seats.
 6. **Languages:** English only for now.
 
+## After the election (added 11 Nov 2026)
+
+- The header now reads "Election held Wed 4 Nov 2026 · Results declared 8 Nov", and the quiz tab is renamed "Compare promises".
+- From 8 Nov the Manifesto guide shows **Official Results** (`NATIONAL`, `RESULT_SOURCES`) and **Who Governs Each Metro** (`METRO_RESULTS`). Seat figures come from BusinessTech (8 Nov), cross-checked with Explain (11 Nov).
+- When a metro elects its mayor, set that entry's `governs` (e.g. "DA–ActionSA coalition") and `mayor`, add a source to `RESULT_SOURCES`, and add the metro to `TRACKER`.
+- `TRACKER` currently holds Cape Town (DA, outright majority), using the DA card's promises. Every promise shows "Not yet reviewed" until the first review, 100 days after the mayor takes office; then use Not started / In progress / Done / Not kept, each with a `source` of `[label, url]`. Use the same method for every metro.
+- The assistant answers results questions ("Who won in Tshwane?") from the same data and still refuses predictions.
+
 ## Usage counts
 
 The page sends anonymous "this happened" hits to a free public counter (abacus.jasoncameron.dev, namespace `lusandanongogo-lge2026`), only on the live github.io site. Keys: `visits` and `voting-day-views` (once per browser session), `quizzes-finished`, `assistant-questions` and `shares` (each time). No answers, quiz results, typed questions, cookies or identifiers are sent. View the totals at `stats.html`. The counts are public to anyone who knows the namespace, and the free service may be unreliable.
