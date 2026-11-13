@@ -312,7 +312,7 @@ footer li { overflow-wrap: anywhere; }
 
   <nav class="tabs" role="tablist" aria-label="Sections">
     <button class="tab" role="tab" id="tab-guide" data-view="guide" aria-controls="view-guide">Manifesto guide</button>
-    <button class="tab" role="tab" id="tab-quiz" data-view="quiz" aria-controls="view-quiz">Compare promises</button>
+    <button class="tab" role="tab" id="tab-quiz" data-view="quiz" aria-controls="view-quiz">Compare what parties promised</button>
     <button class="tab" role="tab" id="tab-vote" data-view="vote" aria-controls="view-vote">Voting day</button>
     <button class="tab" role="tab" id="tab-ask" data-view="ask" aria-controls="view-ask">Ask the guide</button>
   </nav>
@@ -335,7 +335,7 @@ footer li { overflow-wrap: anywhere; }
     </section>
     <section class="pnote" id="governs" hidden>
       <h2>Who Governs Each Metro</h2>
-      <p class="sub">A party needs more than half the seats to govern alone. Where no party has a majority, a coalition or minority government must be agreed. Each council elects its mayor at its first sitting, which must be held within 14 days of the results being declared. Seats shown are for the five largest parties in each council. This list is updated as mayors are elected.</p>
+      <p class="sub">A party needs more than half the seats to govern alone. Where no party has a majority, a coalition or minority government must be agreed. Each council elects its mayor at its first sitting, which must be held within 14 days of the results being declared. Seats shown are for the five largest parties in each council. This list is updated as mayors are elected. <strong>Last checked: 13 Nov 2026.</strong></p>
       <div class="govs" id="governs-list"></div>
     </section>
     <section class="pnote" id="tracker" hidden>
@@ -399,7 +399,7 @@ footer li { overflow-wrap: anywhere; }
 
   <!-- ASSISTANT -->
   <section id="view-ask" role="tabpanel" aria-labelledby="tab-ask" hidden>
-    <div class="scope"><strong>What this assistant covers.</strong> It answers only from the research behind this page, gathered up to 3 November 2026 (official results added up to 11 November): the parties' 2026 local-election manifestos, where they contested, metro mayoral candidates, voting-day basics and the declared results. It can't search the internet, it doesn't give opinions, and it won't tell you who to vote for. For anything else, ask the IEC (0800 11 8000, WhatsApp 0600 88 0000) or the parties directly.</div>
+    <div class="scope"><strong>What this assistant covers.</strong> It answers only from the research behind this page, gathered up to 3 November 2026 (official results added up to 13 November): the parties' 2026 local-election manifestos, where they contested, metro mayoral candidates, voting-day basics and the declared results. It can't search the internet, it doesn't give opinions, and it won't tell you who to vote for. For anything else, ask the IEC (0800 11 8000, WhatsApp 0600 88 0000) or the parties directly.</div>
     <div class="log" id="log" role="log" aria-live="polite" aria-label="Conversation"></div>
     <form class="ask" id="ask-form" autocomplete="off">
       <input id="ask-input" type="text" maxlength="300" placeholder="Ask about a party, an issue or your province" aria-label="Your question">
@@ -1053,7 +1053,7 @@ function answer(raw) {
   if (RE.reco.test(text) || judging) {
     let out = judging && !RE.reco.test(text)
       ? `<p>I don't judge parties or assess claims about them. This guide only records what each party promises in its manifesto. For fact-checks, see Africa Check or established news outlets.</p>`
-      : `<p>I can't tell you who to vote for, and I don't rate or judge parties. That choice is yours. The <a href="#quiz">Compare promises</a> quiz shows which manifestos say the most about what you care about; then read those manifestos yourself.</p>`;
+      : `<p>I can't tell you who to vote for, and I don't rate or judge parties. That choice is yours. The <a href="#quiz">Compare what parties promised</a> quiz shows which manifestos say the most about what you care about; then read those manifestos yourself.</p>`;
     if (topics.length) out += `<p>What this research found${prov ? ` for parties in ${esc(provName[prov])}` : ""} (promises only, not an assessment of any party's record):</p>` + topicLines(parties.length ? parties : pool, topics);
     return out + SRC;
   }
@@ -1175,7 +1175,7 @@ $("#copy-email").addEventListener("click", () => copyFrom($("#err-email"), $("#e
 
 
 /* ---------- after the election: official results, who governs, promise tracker ---------- */
-const RESULTS_AS_OF = "11 Nov 2026";
+const RESULTS_AS_OF = "13 Nov 2026";
 const NATIONAL = [["African National Congress",30.76],["Democratic Alliance",24.64],["uMkhonto weSizwe Party",9.77],["Economic Freedom Fighters",6.22],["ActionSA",5.67]];
 /* Seats per metro: [metro id, total seats, [[party, seats], ...] largest first], status, governing, mayor */
 const METRO_RESULTS = [

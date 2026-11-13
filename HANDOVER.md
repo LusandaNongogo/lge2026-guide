@@ -72,7 +72,7 @@ There is also a footer with the disclaimer ("Why I made this"), Report an error 
 
 ## After the election (added 11 Nov 2026)
 
-- The header now reads "Election held Wed 4 Nov 2026 · Results declared 8 Nov", and the quiz tab is renamed "Compare promises".
+- The header now reads "Election held Wed 4 Nov 2026 · Results declared 8 Nov", and the quiz tab is renamed "Compare what parties promised".
 - From 8 Nov the Manifesto guide shows **Official Results** (`NATIONAL`, `RESULT_SOURCES`) and **Who Governs Each Metro** (`METRO_RESULTS`). Seat figures come from BusinessTech (8 Nov), cross-checked with Explain (11 Nov).
 - When a metro elects its mayor, set that entry's `governs` (e.g. "DA–ActionSA coalition") and `mayor`, add a source to `RESULT_SOURCES`, and add the metro to `TRACKER`.
 - `TRACKER` currently holds Cape Town (DA, outright majority), using the DA card's promises. Every promise shows "Not yet reviewed" until the first review, 100 days after the mayor takes office; then use Not started / In progress / Done / Not kept, each with a `source` of `[label, url]`. Use the same method for every metro.
